@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hospital Management System</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    background:#eef7fd;
+    color:#0b2d4e;
+    min-width:1000px;
+}
+
+/* =====================================================
+   MAIN HEADER
+===================================================== */
+
+.main-header{
+    width:100%;
+    background:linear-gradient(180deg,#0d4876,#0a3c65);
+    color:white;
+}
+
+/* Hospital heading */
+
+.title-area{
+    height:78px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:22px;
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.hospital-logo{
+    font-size:46px;
+    color:white;
+}
+
+.hospital-title{
+    font-size:36px;
+    font-weight:800;
+    letter-spacing:.2px;
+}
+
+
+/* =====================================================
+   SECOND NAVIGATION BAR
+===================================================== */
+
+.navigation-bar{
+    height:70px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 22px;
+
+    background:#0c416a;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.15);
+}
+
+
+/* LEFT BUTTONS */
+
+.left-navigation{
+    display:flex;
+    gap:18px;
+
+    margin-right:auto;
+}
+
+.nav-button{
+    height:48px;
+
+    padding:0 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+    font-weight:600;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.12);
+
+    transition:.2s;
+}
+
+.nav-button i{
+    font-size:22px;
+}
+
+.nav-button.active{
+    background:#147bd1;
+
+    border-color:#2394ef;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.nav-button:hover{
+    background:#197ec9;
+}
+
+
+/* =====================================================
+   RIGHT SIDE STAFF
+===================================================== */
+
+.right-info{
+    display:flex;
+    align-items:center;
+
+    height:100%;
+}
+
+.staff-box{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 22px;
+}
+
+.staff-circle{
+    width:47px;
+    height:47px;
+
+    border-radius:50%;
+
+    background:#1686e2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:16px;
+    font-weight:700;
+
+    box-shadow:0 2px 4px rgba(0,0,0,.2);
+}
+
+.staff-small{
+    color:#d8ebfa;
+    font-size:12px;
+}
+
+.staff-role{
+    font-size:15px;
+    font-weight:700;
+
+    color:white;
+}
+
+.staff-id{
+    font-size:11px;
+    color:#b8d1e4;
+    margin-top:2px;
+}
+
+
+/* divider */
+
+.divider{
+    width:1px;
+    height:43px;
+
+    background:rgba(255,255,255,.3);
+}
+
+
+/* DATE */
+
+.date-box{
+    min-width:178px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 22px;
+}
+
+.date-icon{
+    font-size:25px;
+}
+
+.date-text strong{
+    display:block;
+
+    font-size:13px;
+
+    color:white;
+}
+
+.date-text span{
+    font-size:12px;
+    color:#b9d6eb;
+}
+
+
+/* TIME */
+
+.time-box{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 22px;
+
+    white-space:nowrap;
+}
+
+.time-box i{
+    font-size:27px;
+}
+
+#currentTime{
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* LOGOUT */
+
+.logout-btn{
+    margin-left:15px;
+
+    height:46px;
+
+    padding:0 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#e93f59;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logout-btn i{
+    font-size:20px;
+}
+
+.logout-btn:hover{
+    background:#d8324b;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content{
+    padding:20px 35px 35px;
+}
+
+
+/* TITLE */
+
+.registration-heading{
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:4px;
+}
+
+.registration-heading i{
+    color:#1685dc;
+
+    font-size:33px;
+}
+
+.registration-heading h1{
+    font-size:29px;
+
+    font-weight:800;
+
+    color:#082e52;
+}
+
+.subtitle{
+    margin-left:48px;
+
+    margin-bottom:16px;
+
+    color:#536c85;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.registration-form{
+    width:100%;
+}
+
+
+/* individual section card */
+
+.form-section{
+    background:white;
+
+    border:1px solid #d3e3ef;
+
+    border-radius:11px;
+
+    margin-bottom:8px;
+
+    padding:10px;
+
+    box-shadow:
+        0 2px 5px rgba(20,70,110,.06);
+}
+
+
+/* SECTION HEADER */
+
+.section-header{
+    height:42px;
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    padding:0 12px;
+
+    background:linear-gradient(
+        90deg,
+        #edf7ff,
+        #f3f9fd
+    );
+
+    border-radius:8px;
+
+    margin-bottom:8px;
+}
+
+.section-number{
+    width:37px;
+    height:37px;
+
+    flex:none;
+
+    background:#137fd5;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:17px;
+    font-weight:700;
+}
+
+.section-title{
+    font-size:18px;
+
+    font-weight:750;
+
+    color:#072f55;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    column-gap:50px;
+
+    row-gap:7px;
+
+    padding:0 24px 5px;
+}
+
+
+/* FIELD WITH ICON */
+
+.field-row{
+    display:grid;
+
+    grid-template-columns:31px 1fr;
+
+    align-items:end;
+}
+
+.field-icon{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding-bottom:10px;
+
+    color:#173f65;
+
+    font-size:18px;
+}
+
+
+/* FORM GROUP */
+
+.form-group{
+    width:100%;
+}
+
+.form-group label{
+    display:block;
+
+    margin-bottom:4px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#0b3155;
+}
+
+.required{
+    color:#e54a4a;
+}
+
+.optional{
+    font-size:11px;
+
+    color:#718399;
+
+    font-weight:400;
+}
+
+
+/* INPUT */
+
+.form-control{
+    width:100%;
+
+    height:35px;
+
+    padding:0 13px;
+
+    border:1px solid #cbdce8;
+
+    border-radius:6px;
+
+    outline:none;
+
+    font-size:13px;
+
+    color:#243e55;
+
+    background:white;
+
+    transition:.2s;
+}
+
+.form-control::placeholder{
+    color:#8496aa;
+}
+
+.form-control:focus{
+    border-color:#1684d9;
+
+    box-shadow:0 0 0 2px rgba(22,132,217,.10);
+}
+
+
+/* AGE */
+
+.age-input{
+    background:#e9f1f8;
+}
+
+
+/* FULL WIDTH */
+
+.full-width{
+    grid-column:1 / -1;
+}
+
+
+/* =====================================================
+   GENDER BOX
+===================================================== */
+
+.gender-options{
+    display:grid;
+
+    grid-template-columns:1fr 1fr 1fr;
+
+    gap:5px;
+}
+
+.gender-option{
+    height:35px;
+
+    border:1px solid #d3e1ec;
+
+    border-radius:6px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-left:14px;
+
+    gap:8px;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+.gender-option:hover{
+    background:#f2f8fd;
+}
+
+.gender-option input{
+    width:17px;
+    height:17px;
+
+    accent-color:#147fd6;
+}
+
+
+/* =====================================================
+   ADDRESS / CONTACT ICONS
+===================================================== */
+
+.icon-space{
+    font-size:18px;
+}
+
+
+/* =====================================================
+   REGISTRATION SECTION
+===================================================== */
+
+.patient-tag{
+    height:35px;
+
+    display:flex;
+    align-items:center;
+}
+
+.patient-badge{
+    display:inline-block;
+
+    padding:7px 16px;
+
+    background:#dff5e9;
+
+    color:#17704d;
+
+    border:1px solid #bfe5d0;
+
+    border-radius:6px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+
+/* =====================================================
+   BUTTON AREA
+===================================================== */
+
+.action-area{
+    background:white;
+
+    border:1px solid #d2e2ed;
+
+    border-radius:10px;
+
+    padding:17px 20px;
+
+    display:flex;
+
+    gap:12px;
+}
+
+.action-button{
+    height:42px;
+
+    padding:0 22px;
+
+    border-radius:7px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.register-button{
+    background:#147fd4;
+
+    color:white;
+
+    border:1px solid #147fd4;
+}
+
+.register-button:hover{
+    background:#086bb9;
+}
+
+.reset-button{
+    background:white;
+
+    color:#314b62;
+
+    border:1px solid #cbd9e3;
+}
+
+.cancel-button{
+    background:white;
+
+    color:#536575;
+
+    border:1px solid transparent;
+}
+
+
+/* =====================================================
+   LAPTOP RESPONSIVE
+===================================================== */
+
+@media(max-width:1300px){
+
+    .hospital-title{
+        font-size:31px;
+    }
+
+    .nav-button{
+        font-size:15px;
+
+        padding:0 16px;
+    }
+
+    .right-info{
+        transform:scale(.92);
+
+        transform-origin:right center;
+    }
+
+    .form-grid{
+        column-gap:30px;
+    }
+
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print{
+
+    .navigation-bar{
+        display:none;
+    }
+
+    .main-content{
+        padding:10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+ HEADER
+====================================================== -->
+
+<header class="main-header">
+
+    <div class="title-area">
+
+        <i class="fa-solid fa-hospital hospital-logo"></i>
+
+        <div class="hospital-title">
+            Hospital Management Information System
+        </div>
+
+    </div>
+
+
+    <div class="navigation-bar">
+
+
+        <!-- LEFT -->
+
+        <div class="left-navigation">
+
+            <a href="#" class="nav-button active">
+
+                <i class="fa-solid fa-house"></i>
+
+                Home
+
+            </a>
+
+
+            <a href="#" class="nav-button">
+
+                <i class="fa-solid fa-table-cells-large"></i>
+
+                Dashboard
+
+            </a>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="right-info">
+
+
+            <div class="staff-box">
+
+                <div class="staff-circle">
+                    RS
+                </div>
+
+
+                <div>
+
+                    <div class="staff-small">
+                        Logged in as
+                    </div>
+
+                    <div class="staff-role">
+                        Registration Staff
+                    </div>
+
+                    <div class="staff-id">
+                        Staff ID: RS-001
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <!-- DATE -->
+
+            <div class="date-box">
+
+                <i class="fa-regular fa-calendar-days date-icon"></i>
+
+                <div class="date-text">
+
+                    <strong id="currentDate">
+                        Tue, 15 Sep 2026
+                    </strong>
+
+                    <span id="currentDay">
+                        Tuesday
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <!-- TIME -->
+
+            <div class="time-box">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <div id="currentTime">
+                    12:12:39 PM
+                </div>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+
+            <button class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ======================================================
+ CONTENT
+====================================================== -->
+
+<main class="main-content">
+
+
+    <div class="registration-heading">
+
+        <i class="fa-solid fa-user-group"></i>
+
+        <h1>
+            New Patient Registration
+        </h1>
+
+    </div>
+
+
+    <div class="subtitle">
+        Enter patient details to register a new patient in the system
+    </div>
+
+
+
+    <form id="registrationForm" class="registration-form">
+
+
+
+        <!-- ==================================================
+         1 PATIENT INFORMATION
+        =================================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    1
+                </div>
+
+                <div class="section-title">
+                    Patient Information
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <!-- NAME -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            placeholder="Enter patient's full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOB -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-regular fa-calendar-days"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Date of Birth
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            id="dob"
+                            class="form-control"
+                            type="date"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AGE -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-user-clock"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Age
+                        </label>
+
+                        <input
+                            id="age"
+                            class="form-control age-input"
+                            type="text"
+                            placeholder="Auto-calculated"
+                            readonly
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GENDER -->
+
+                <div class="field-row">
+
+                    <div class="field-icon"></div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Gender
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <div class="gender-options">
+
+                            <label class="gender-option">
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                    required
+                                >
+
+                                Male
+
+                            </label>
+
+
+                            <label class="gender-option">
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Female"
+                                >
+
+                                Female
+
+                            </label>
+
+
+                            <label class="gender-option">
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Other"
+                                >
+
+                                Other
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BLOOD -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-droplet"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Blood Group
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+
+                        <select class="form-control">
+
+                            <option>
+                                Unknown / Not sure
+                            </option>
+
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MARITAL -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-user-group"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Marital Status
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+
+                        <select class="form-control">
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option>Single</option>
+                            <option>Married</option>
+                            <option>Divorced</option>
+                            <option>Widowed</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+         2 CONTACT
+        =================================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    2
+                </div>
+
+                <div class="section-title">
+                    Contact Information
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <!-- MOBILE -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Mobile Number
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="tel"
+                            maxlength="10"
+                            pattern="[0-9]{10}"
+                            placeholder="10-digit mobile number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ALTERNATE -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Alternate Phone Number
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="tel"
+                            maxlength="10"
+                            placeholder="10-digit number"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="field-row full-width">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Email Address
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="email"
+                            placeholder="name@example.com"
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+         3 ADDRESS
+        =================================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    3
+                </div>
+
+                <div class="section-title">
+                    Address Information
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <!-- HOUSE -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-house"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            House / Flat No.
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            placeholder="e.g. 12B"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STREET -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Street / Locality
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            placeholder="e.g. MG Road"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CITY -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-city"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            City
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            placeholder="e.g. Kolkata"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATE -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-building"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            State
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            placeholder="e.g. West Bengal"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PIN -->
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            PIN Code
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            maxlength="6"
+                            pattern="[0-9]{6}"
+                            placeholder="6-digit PIN code"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+         4 EMERGENCY CONTACT
+        =================================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    4
+                </div>
+
+                <div class="section-title">
+                    Emergency Contact
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Emergency Contact Name
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-people-roof"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Relationship with Patient
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <select class="form-control" required>
+
+                            <option value="">
+                                Select relationship
+                            </option>
+
+                            <option>Father</option>
+                            <option>Mother</option>
+                            <option>Brother</option>
+                            <option>Sister</option>
+                            <option>Spouse</option>
+                            <option>Son</option>
+                            <option>Daughter</option>
+                            <option>Guardian</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Emergency Contact Number
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            class="form-control"
+                            maxlength="10"
+                            pattern="[0-9]{10}"
+                            placeholder="10-digit mobile number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+         5 IDENTIFICATION
+        =================================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    5
+                </div>
+
+                <div class="section-title">
+                    Identification Information
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            ID Proof Type
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <select class="form-control" required>
+
+                            <option value="">
+                                Select ID type
+                            </option>
+
+                            <option>Aadhaar Card</option>
+                            <option>Voter ID</option>
+                            <option>Driving Licence</option>
+                            <option>Passport</option>
+                            <option>PAN Card</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-hashtag"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            ID Proof Number
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter ID number"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+         6 REGISTRATION
+        =================================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    6
+                </div>
+
+                <div class="section-title">
+                    Registration Information
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-regular fa-calendar-check"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Registration Date
+                        </label>
+
+                        <input
+                            id="registrationDate"
+                            type="text"
+                            class="form-control age-input"
+                            readonly
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="field-row">
+
+                    <div class="field-icon">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Registration Type
+                        </label>
+
+                        <div class="patient-tag">
+
+                            <span class="patient-badge">
+                                New Patient
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+         BUTTONS
+        =================================================== -->
+
+        <div class="action-area">
+
+
+            <button
+                class="action-button register-button"
+                type="submit"
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Register Patient
+
+            </button>
+
+
+            <button
+                class="action-button reset-button"
+                type="reset"
+            >
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset / Clear
+
+            </button>
+
+
+            <button
+                class="action-button cancel-button"
+                type="button"
+            >
+
+                Cancel
+
+            </button>
+
+
+        </div>
+
+
+    </form>
+
+</main>
+
+
+
+<script>
+
+/* =====================================================
+   LIVE DATE / TIME
+===================================================== */
+
+function updateDateTime(){
+
+    const now = new Date();
+
+
+    /* DATE */
+
+    const months = [
+        "Jan","Feb","Mar","Apr",
+        "May","Jun","Jul","Aug",
+        "Sep","Oct","Nov","Dec"
+    ];
+
+
+    const shortDays = [
+        "Sun","Mon","Tue","Wed",
+        "Thu","Fri","Sat"
+    ];
+
+
+    const fullDays = [
+        "Sunday","Monday","Tuesday",
+        "Wednesday","Thursday",
+        "Friday","Saturday"
+    ];
+
+
+    document.getElementById("currentDate").textContent =
+        `${shortDays[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+
+
+    document.getElementById("currentDay").textContent =
+        fullDays[now.getDay()];
+
+
+
+    /* TIME */
+
+    let hour = now.getHours();
+
+    const minute =
+        String(now.getMinutes()).padStart(2,"0");
+
+    const second =
+        String(now.getSeconds()).padStart(2,"0");
+
+
+    const period =
+        hour >= 12 ? "PM" : "AM";
+
+
+    hour = hour % 12;
+
+    hour = hour || 12;
+
+
+    document.getElementById("currentTime").textContent =
+        `${String(hour).padStart(2,"0")}:${minute}:${second} ${period}`;
+
+}
+
+
+updateDateTime();
+
+setInterval(updateDateTime,1000);
+
+
+
+/* =====================================================
+   REGISTRATION DATE
+===================================================== */
+
+function setRegistrationDate(){
+
+    const today = new Date();
+
+
+    const months = [
+        "Jan","Feb","Mar","Apr",
+        "May","Jun","Jul","Aug",
+        "Sep","Oct","Nov","Dec"
+    ];
+
+
+    document.getElementById("registrationDate").value =
+        `${String(today.getDate()).padStart(2,"0")} ${months[today.getMonth()]} ${today.getFullYear()}`;
+
+}
+
+setRegistrationDate();
+
+
+
+/* =====================================================
+   AGE CALCULATION
+===================================================== */
+
+document.getElementById("dob").addEventListener(
+"change",
+function(){
+
+    const birthDate = new Date(this.value);
+
+    const today = new Date();
+
+
+    if(birthDate > today){
+
+        document.getElementById("age").value =
+            "Invalid DOB";
+
+        return;
+    }
+
+
+    let age =
+        today.getFullYear() -
+        birthDate.getFullYear();
+
+
+    const month =
+        today.getMonth() -
+        birthDate.getMonth();
+
+
+    if(
+        month < 0 ||
+        (
+            month === 0 &&
+            today.getDate() <
+            birthDate.getDate()
+        )
+    ){
+
+        age--;
+
+    }
+
+
+    document.getElementById("age").value =
+        age + " years";
+
+});
+
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+document.getElementById("registrationForm")
+.addEventListener(
+"submit",
+function(event){
+
+    event.preventDefault();
+
+    alert(
+        "Patient Registered Successfully!"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
