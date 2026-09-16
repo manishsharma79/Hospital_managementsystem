@@ -10,6 +10,7 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -29,10 +30,12 @@ button{
 }
 
 .hidden{
-    display:none!important;
+    display:none !important;
 }
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .main-header{
     width:100%;
@@ -186,7 +189,9 @@ button{
     background:#d8324b;
 }
 
-/* ================= MAIN ================= */
+/* =====================================================
+   MAIN
+===================================================== */
 
 .main-content{
     padding:20px 35px 40px;
@@ -229,7 +234,9 @@ button{
     box-shadow:0 2px 6px rgba(20,70,110,.07);
 }
 
-/* ================= DASHBOARD ================= */
+/* =====================================================
+   DASHBOARD
+===================================================== */
 
 .stats-grid{
     display:grid;
@@ -300,6 +307,7 @@ button{
     padding:18px;
     min-height:145px;
     transition:.2s;
+    cursor:pointer;
 }
 
 .function-card:hover{
@@ -333,7 +341,9 @@ button{
     line-height:1.4;
 }
 
-/* ================= FORM ================= */
+/* =====================================================
+   FORM
+===================================================== */
 
 .form-section{
     background:white;
@@ -483,7 +493,9 @@ button{
     font-weight:600;
 }
 
-/* ================= BUTTONS ================= */
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .action-area{
     background:white;
@@ -511,6 +523,10 @@ button{
     border:1px solid #147fd4;
 }
 
+.register-button:hover{
+    background:#086bb9;
+}
+
 .reset-button{
     background:white;
     color:#314b62;
@@ -523,7 +539,9 @@ button{
     border:1px solid transparent;
 }
 
-/* ================= PATIENT LIST ================= */
+/* =====================================================
+   PATIENT LIST
+===================================================== */
 
 .patient-list-section{
     margin-top:25px;
@@ -571,7 +589,7 @@ button{
 .patient-table{
     width:100%;
     border-collapse:collapse;
-    min-width:1000px;
+    min-width:1100px;
 }
 
 .patient-table th{
@@ -606,6 +624,7 @@ button{
     border:none;
     padding:7px 10px;
     border-radius:5px;
+    margin-right:4px;
 }
 
 .view-btn{
@@ -630,7 +649,9 @@ button{
     margin-bottom:10px;
 }
 
-/* ================= MODULE ================= */
+/* =====================================================
+   MODULE PAGE
+===================================================== */
 
 .module-page{
     background:white;
@@ -723,7 +744,9 @@ button{
     font-weight:600;
 }
 
-/* ================= MODALS ================= */
+/* =====================================================
+   MODALS
+===================================================== */
 
 .modal{
     display:none;
@@ -872,7 +895,9 @@ button{
     display:none;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:1300px){
 
@@ -892,13 +917,17 @@ button{
     .form-grid{
         column-gap:30px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="main-header">
 
@@ -912,81 +941,128 @@ Hospital Management Information System
 
 </div>
 
+
 <div class="navigation-bar">
 
 <div class="left-navigation">
 
-<button class="nav-button active"
+<button
+class="nav-button active"
 id="homeNav"
 onclick="showHome()">
+
 <i class="fa-solid fa-house"></i>
 Home
+
 </button>
 
-<button class="nav-button"
+
+<button
+class="nav-button"
 id="dashboardNav"
 onclick="showDashboard()">
+
 <i class="fa-solid fa-table-cells-large"></i>
 Dashboard
+
 </button>
 
-<button class="nav-button"
+
+<button
+class="nav-button"
 onclick="showRegistration()">
+
 <i class="fa-solid fa-user-plus"></i>
 Registration
+
 </button>
 
 </div>
+
 
 <div class="right-info">
 
 <div class="staff-box">
 
-<div class="staff-circle">RS</div>
+<div class="staff-circle">
+RS
+</div>
 
 <div>
-<div class="staff-small">Logged in as</div>
-<div class="staff-role">Registration Staff</div>
-<div class="staff-id">Staff ID: RS-001</div>
+
+<div class="staff-small">
+Logged in as
+</div>
+
+<div class="staff-role">
+Registration Staff
+</div>
+
+<div class="staff-id">
+Staff ID: RS-001
 </div>
 
 </div>
+
+</div>
+
 
 <div class="divider"></div>
+
 
 <div class="date-box">
 
 <i class="fa-regular fa-calendar-days date-icon"></i>
 
 <div class="date-text">
+
 <strong id="currentDate"></strong>
+
 <span id="currentDay"></span>
+
 </div>
 
 </div>
+
 
 <div class="divider"></div>
+
 
 <div class="time-box">
 
 <i class="fa-regular fa-clock"></i>
+
 <div id="currentTime"></div>
 
 </div>
 
-<button class="logout-btn" onclick="logout()">
+
+<button
+class="logout-btn"
+onclick="logout()">
+
 <i class="fa-solid fa-right-from-bracket"></i>
 Logout
+
 </button>
 
 </div>
+
 </div>
+
 </header>
 
 
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <main class="main-content">
 
-<!-- ================= HOME ================= -->
+
+<!-- =====================================================
+     HOME
+===================================================== -->
 
 <div id="homePage">
 
@@ -994,7 +1070,9 @@ Logout
 
 <i class="fa-solid fa-hospital-user"></i>
 
-<h1>Hospital Management System</h1>
+<h1>
+Hospital Management System
+</h1>
 
 </div>
 
@@ -1002,21 +1080,24 @@ Logout
 Registration Staff Portal
 </div>
 
+
 <div class="card">
 
 <div class="dashboard-section-title">
 
 <i class="fa-solid fa-circle-info"></i>
 
-<h2>Welcome</h2>
+<h2>
+Welcome
+</h2>
 
 </div>
 
 <p style="color:#61798d;line-height:1.7;font-size:14px;">
 
 Welcome to the Hospital Management Information System.
-Use Dashboard to access hospital functions or Registration
-to register a new patient.
+Use the Dashboard to access hospital functions or use
+Registration to register a new patient.
 
 </p>
 
@@ -1025,7 +1106,9 @@ to register a new patient.
 </div>
 
 
-<!-- ================= DASHBOARD ================= -->
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
 
 <div id="dashboardPage" class="hidden">
 
@@ -1033,9 +1116,12 @@ to register a new patient.
 
 <i class="fa-solid fa-chart-line"></i>
 
-<h1>Dashboard</h1>
+<h1>
+Dashboard
+</h1>
 
 </div>
+
 
 <div class="dashboard-subtitle">
 
@@ -1046,6 +1132,7 @@ Hospital Management System – Registration Staff Dashboard
 
 <div class="stats-grid">
 
+
 <div class="stat-card">
 
 <div class="stat-icon">
@@ -1053,8 +1140,15 @@ Hospital Management System – Registration Staff Dashboard
 </div>
 
 <div>
-<h3 id="totalPatients">0</h3>
-<p>Total Patients</p>
+
+<h3 id="totalPatients">
+0
+</h3>
+
+<p>
+Total Patients
+</p>
+
 </div>
 
 </div>
@@ -1067,8 +1161,15 @@ Hospital Management System – Registration Staff Dashboard
 </div>
 
 <div>
-<h3 id="newPatients">0</h3>
-<p>Registered Patients</p>
+
+<h3 id="newPatients">
+0
+</h3>
+
+<p>
+Registered Patients
+</p>
+
 </div>
 
 </div>
@@ -1081,8 +1182,15 @@ Hospital Management System – Registration Staff Dashboard
 </div>
 
 <div>
-<h3 id="totalDoctors">0</h3>
-<p>Registered Doctors</p>
+
+<h3 id="totalDoctors">
+0
+</h3>
+
+<p>
+Registered Doctors
+</p>
+
 </div>
 
 </div>
@@ -1095,8 +1203,15 @@ Hospital Management System – Registration Staff Dashboard
 </div>
 
 <div>
-<h3 id="totalAppointments">0</h3>
-<p>Appointments</p>
+
+<h3 id="totalAppointments">
+0
+</h3>
+
+<p>
+Appointments
+</p>
+
 </div>
 
 </div>
@@ -1110,9 +1225,12 @@ Hospital Management System – Registration Staff Dashboard
 
 <i class="fa-solid fa-list-check"></i>
 
-<h2>Broad Functions</h2>
+<h2>
+Broad Functions
+</h2>
 
 </div>
+
 
 <div class="function-grid">
 
@@ -1124,7 +1242,9 @@ onclick="openFunction('login')">
 <i class="fa-solid fa-right-to-bracket"></i>
 </div>
 
-<h3>Login</h3>
+<h3>
+Login
+</h3>
 
 <p>
 Staff login and authentication information.
@@ -1140,7 +1260,9 @@ onclick="showRegistration()">
 <i class="fa-solid fa-user-plus"></i>
 </div>
 
-<h3>New Patient Registration</h3>
+<h3>
+New Patient Registration
+</h3>
 
 <p>
 Register a new patient with complete details.
@@ -1156,7 +1278,9 @@ onclick="openFunction('update')">
 <i class="fa-solid fa-user-pen"></i>
 </div>
 
-<h3>Update Patient Details</h3>
+<h3>
+Update Patient Details
+</h3>
 
 <p>
 Search and update registered patient information.
@@ -1172,7 +1296,9 @@ onclick="openFunction('unique')">
 <i class="fa-solid fa-id-card"></i>
 </div>
 
-<h3>Generate Unique Patient ID</h3>
+<h3>
+Generate Unique Patient ID
+</h3>
 
 <p>
 Generate a unique identification number.
@@ -1188,7 +1314,9 @@ onclick="openFunction('doctor')">
 <i class="fa-solid fa-user-doctor"></i>
 </div>
 
-<h3>Assign / Register Doctor</h3>
+<h3>
+Assign / Register Doctor
+</h3>
 
 <p>
 Register doctor and assign department.
@@ -1204,7 +1332,9 @@ onclick="openFunction('availability')">
 <i class="fa-solid fa-calendar-days"></i>
 </div>
 
-<h3>Check Doctor Availability</h3>
+<h3>
+Check Doctor Availability
+</h3>
 
 <p>
 Check registered doctor availability.
@@ -1220,7 +1350,9 @@ onclick="openFunction('history')">
 <i class="fa-solid fa-clock-rotate-left"></i>
 </div>
 
-<h3>Patient Visit History</h3>
+<h3>
+Patient Visit History
+</h3>
 
 <p>
 View patient visit and appointment history.
@@ -1236,7 +1368,9 @@ onclick="openFunction('appointment')">
 <i class="fa-solid fa-calendar-plus"></i>
 </div>
 
-<h3>Create / Cancel Appointment</h3>
+<h3>
+Create / Cancel Appointment
+</h3>
 
 <p>
 Create or cancel patient appointments.
@@ -1245,6 +1379,7 @@ Create or cancel patient appointments.
 </div>
 
 </div>
+
 </div>
 
 
@@ -1254,9 +1389,12 @@ Create or cancel patient appointments.
 
 <i class="fa-solid fa-users"></i>
 
-<h2>Recent Patients</h2>
+<h2>
+Recent Patients
+</h2>
 
 </div>
+
 
 <div class="table-container">
 
@@ -1265,12 +1403,14 @@ Create or cancel patient appointments.
 <thead>
 
 <tr>
+
 <th>Patient ID</th>
 <th>Name</th>
 <th>Gender</th>
 <th>Age</th>
 <th>Mobile</th>
 <th>Registration Date</th>
+
 </tr>
 
 </thead>
@@ -1286,7 +1426,9 @@ Create or cancel patient appointments.
 </div>
 
 
-<!-- ================= REGISTRATION ================= -->
+<!-- =====================================================
+     REGISTRATION
+===================================================== -->
 
 <div id="registrationPage" class="hidden">
 
@@ -1294,25 +1436,34 @@ Create or cancel patient appointments.
 
 <i class="fa-solid fa-user-group"></i>
 
-<h1>New Patient Registration</h1>
+<h1>
+New Patient Registration
+</h1>
 
 </div>
 
+
 <div class="subtitle">
+
 Enter patient details to register a new patient in the system
+
 </div>
 
 
 <form id="registrationForm" novalidate>
 
 
-<!-- 1 PATIENT -->
+<!-- =====================================================
+     1 PATIENT INFORMATION
+===================================================== -->
 
 <section class="form-section">
 
 <div class="section-header">
 
-<div class="section-number">1</div>
+<div class="section-number">
+1
+</div>
 
 <div class="section-title">
 Patient Information
@@ -1324,16 +1475,23 @@ Patient Information
 <div class="form-grid">
 
 
+<!-- NAME -->
+
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-user"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-Full Name <span class="required">*</span>
+
+Full Name
+<span class="required">*</span>
+
 </label>
 
 <input
@@ -1343,19 +1501,27 @@ type="text"
 placeholder="Enter patient's full name">
 
 </div>
+
 </div>
 
+
+<!-- DOB -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-regular fa-calendar-days"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-Date of Birth <span class="required">*</span>
+
+Date of Birth
+<span class="required">*</span>
+
 </label>
 
 <input
@@ -1364,18 +1530,25 @@ class="form-control"
 type="date">
 
 </div>
+
 </div>
 
+
+<!-- AGE -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-user-clock"></i>
+
 </div>
 
 <div class="form-group">
 
-<label>Age</label>
+<label>
+Age
+</label>
 
 <input
 id="age"
@@ -1385,8 +1558,11 @@ placeholder="Auto-calculated"
 readonly>
 
 </div>
+
 </div>
 
+
+<!-- GENDER -->
 
 <div class="field-row">
 
@@ -1395,54 +1571,89 @@ readonly>
 <div class="form-group">
 
 <label>
-Gender <span class="required">*</span>
+
+Gender
+<span class="required">*</span>
+
 </label>
+
 
 <div class="gender-options">
 
+
 <label class="gender-option">
-<input type="radio"
+
+<input
+type="radio"
 name="gender"
 value="Male">
+
 Male
+
 </label>
 
+
 <label class="gender-option">
-<input type="radio"
+
+<input
+type="radio"
 name="gender"
 value="Female">
+
 Female
+
 </label>
+
 
 <label class="gender-option">
-<input type="radio"
+
+<input
+type="radio"
 name="gender"
 value="Other">
+
 Other
+
 </label>
 
+
 </div>
 
 </div>
+
 </div>
 
+
+<!-- BLOOD -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-droplet"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Blood Group
-<span class="optional">(optional)</span>
+<span class="optional">
+(optional)
+</span>
+
 </label>
 
-<select id="bloodGroup" class="form-control">
 
-<option>Unknown / Not sure</option>
+<select
+id="bloodGroup"
+class="form-control">
+
+<option>
+Unknown / Not sure
+</option>
+
 <option>A+</option>
 <option>A-</option>
 <option>B+</option>
@@ -1455,26 +1666,40 @@ Blood Group
 </select>
 
 </div>
+
 </div>
 
+
+<!-- MARITAL -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-user-group"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Marital Status
-<span class="optional">(optional)</span>
+<span class="optional">
+(optional)
+</span>
+
 </label>
 
-<select id="maritalStatus"
+
+<select
+id="maritalStatus"
 class="form-control">
 
-<option value="">Select</option>
+<option value="">
+Select
+</option>
+
 <option>Single</option>
 <option>Married</option>
 <option>Divorced</option>
@@ -1483,19 +1708,25 @@ class="form-control">
 </select>
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- 2 CONTACT -->
+<!-- =====================================================
+     2 CONTACT
+===================================================== -->
 
 <section class="form-section">
 
 <div class="section-header">
 
-<div class="section-number">2</div>
+<div class="section-number">
+2
+</div>
 
 <div class="section-title">
 Contact Information
@@ -1503,19 +1734,25 @@ Contact Information
 
 </div>
 
+
 <div class="form-grid">
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-phone"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-Mobile Number <span class="required">*</span>
+
+Mobile Number
+<span class="required">*</span>
+
 </label>
 
 <input
@@ -1526,20 +1763,27 @@ maxlength="10"
 placeholder="10-digit mobile number">
 
 </div>
+
 </div>
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-phone"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Alternate Phone Number
-<span class="optional">(optional)</span>
+<span class="optional">
+(optional)
+</span>
+
 </label>
 
 <input
@@ -1550,20 +1794,27 @@ maxlength="10"
 placeholder="10-digit number">
 
 </div>
+
 </div>
 
 
 <div class="field-row full-width">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-envelope"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Email Address
-<span class="optional">(optional)</span>
+<span class="optional">
+(optional)
+</span>
+
 </label>
 
 <input
@@ -1573,19 +1824,25 @@ type="text"
 placeholder="name@example.com">
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- 3 ADDRESS -->
+<!-- =====================================================
+     3 ADDRESS
+===================================================== -->
 
 <section class="form-section">
 
 <div class="section-header">
 
-<div class="section-number">3</div>
+<div class="section-number">
+3
+</div>
 
 <div class="section-title">
 Address Information
@@ -1593,20 +1850,27 @@ Address Information
 
 </div>
 
+
 <div class="form-grid">
 
+
+<!-- HOUSE -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-house"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 House / Flat No.
 <span class="required">*</span>
+
 </label>
 
 <input
@@ -1616,20 +1880,27 @@ type="text"
 placeholder="e.g. 12B">
 
 </div>
+
 </div>
 
+
+<!-- STREET -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-location-dot"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Street / Locality
 <span class="required">*</span>
+
 </label>
 
 <input
@@ -1639,19 +1910,27 @@ type="text"
 placeholder="e.g. MG Road">
 
 </div>
+
 </div>
 
+
+<!-- CITY -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-city"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-City <span class="required">*</span>
+
+City
+<span class="required">*</span>
+
 </label>
 
 <input
@@ -1661,20 +1940,27 @@ type="text"
 placeholder="e.g. Kolkata">
 
 </div>
+
 </div>
 
+
+<!-- STATE -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-building"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 State / Union Territory
 <span class="required">*</span>
+
 </label>
 
 <select
@@ -1688,19 +1974,27 @@ Select State / Union Territory
 </select>
 
 </div>
+
 </div>
 
+
+<!-- COUNTRY -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-globe"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-Country <span class="required">*</span>
+
+Country
+<span class="required">*</span>
+
 </label>
 
 <select
@@ -1714,19 +2008,27 @@ Select Country
 </select>
 
 </div>
+
 </div>
 
+
+<!-- PIN -->
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-envelope"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-PIN Code <span class="required">*</span>
+
+PIN Code
+<span class="required">*</span>
+
 </label>
 
 <input
@@ -1737,19 +2039,25 @@ maxlength="6"
 placeholder="6-digit PIN code">
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- 4 EMERGENCY -->
+<!-- =====================================================
+     4 EMERGENCY
+===================================================== -->
 
 <section class="form-section">
 
 <div class="section-header">
 
-<div class="section-number">4</div>
+<div class="section-number">
+4
+</div>
 
 <div class="section-title">
 Emergency Contact
@@ -1757,20 +2065,25 @@ Emergency Contact
 
 </div>
 
+
 <div class="form-grid">
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-user-shield"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Emergency Contact Name
 <span class="required">*</span>
+
 </label>
 
 <input
@@ -1780,21 +2093,27 @@ type="text"
 placeholder="Full name">
 
 </div>
+
 </div>
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-people-roof"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Relationship with Patient
 <span class="required">*</span>
+
 </label>
+
 
 <select
 id="relationship"
@@ -1817,20 +2136,25 @@ Select relationship
 </select>
 
 </div>
+
 </div>
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-phone"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
+
 Emergency Contact Number
 <span class="required">*</span>
+
 </label>
 
 <input
@@ -1841,19 +2165,25 @@ maxlength="10"
 placeholder="10-digit mobile number">
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- 5 ID -->
+<!-- =====================================================
+     5 IDENTIFICATION
+===================================================== -->
 
 <section class="form-section">
 
 <div class="section-header">
 
-<div class="section-number">5</div>
+<div class="section-number">
+5
+</div>
 
 <div class="section-title">
 Identification Information
@@ -1861,20 +2191,27 @@ Identification Information
 
 </div>
 
+
 <div class="form-grid">
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-id-card"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-ID Proof Type <span class="required">*</span>
+
+ID Proof Type
+<span class="required">*</span>
+
 </label>
+
 
 <select
 id="idType"
@@ -1894,19 +2231,25 @@ Select ID type
 </select>
 
 </div>
+
 </div>
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-hashtag"></i>
+
 </div>
 
 <div class="form-group">
 
 <label>
-ID Proof Number <span class="required">*</span>
+
+ID Proof Number
+<span class="required">*</span>
+
 </label>
 
 <input
@@ -1916,19 +2259,25 @@ type="text"
 placeholder="Enter ID number">
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
-<!-- 6 REGISTRATION -->
+<!-- =====================================================
+     6 REGISTRATION
+===================================================== -->
 
 <section class="form-section">
 
 <div class="section-header">
 
-<div class="section-number">6</div>
+<div class="section-number">
+6
+</div>
 
 <div class="section-title">
 Registration Information
@@ -1936,37 +2285,55 @@ Registration Information
 
 </div>
 
+
 <div class="form-grid">
 
 
+<!-- REGISTRATION DATE -->
+
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-regular fa-calendar-check"></i>
+
 </div>
 
 <div class="form-group">
 
-<label>Registration Date</label>
+<label>
+
+Registration Date
+<span class="required">*</span>
+
+</label>
+
+<!-- IMPORTANT:
+     DATE IS NOW EDITABLE -->
 
 <input
 id="registrationDate"
-class="form-control age-input"
-readonly>
+type="date"
+class="form-control">
 
 </div>
+
 </div>
 
 
 <div class="field-row">
 
 <div class="field-icon">
+
 <i class="fa-solid fa-user-plus"></i>
+
 </div>
 
 <div class="form-group">
 
-<label>Registration Type</label>
+<label>
+Registration Type
+</label>
 
 <div class="patient-tag">
 
@@ -1977,13 +2344,18 @@ New Patient
 </div>
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 
+<!-- BUTTONS -->
+
 <div class="action-area">
+
 
 <button
 class="action-button register-button"
@@ -2016,14 +2388,18 @@ Cancel
 
 </button>
 
+
 </div>
 
 </form>
 
 
-<!-- PATIENT LIST -->
+<!-- =====================================================
+     PATIENT LIST
+===================================================== -->
 
 <section class="patient-list-section">
+
 
 <div class="patient-list-header">
 
@@ -2031,9 +2407,12 @@ Cancel
 
 <i class="fa-solid fa-users"></i>
 
-<h2>Registered Patient List</h2>
+<h2>
+Registered Patient List
+</h2>
 
 </div>
+
 
 <div class="patient-count">
 
@@ -2062,11 +2441,13 @@ Total Patients:
 <th>Mobile</th>
 <th>Country</th>
 <th>State</th>
+<th>Registration Date</th>
 <th>Action</th>
 
 </tr>
 
 </thead>
+
 
 <tbody id="patientTableBody"></tbody>
 
@@ -2075,7 +2456,8 @@ Total Patients:
 </div>
 
 
-<div id="emptyMessage"
+<div
+id="emptyMessage"
 class="empty-message">
 
 <i class="fa-solid fa-user-slash"></i>
@@ -2084,27 +2466,37 @@ No patients registered yet.
 
 </div>
 
+
 </section>
 
 </div>
 
 
-<!-- ================= MODULE PAGE ================= -->
+<!-- =====================================================
+     MODULE PAGE
+===================================================== -->
 
 <div id="modulePage" class="hidden">
 
 <div class="module-page">
 
+
 <div class="module-page-header">
+
 
 <div class="module-title">
 
-<i id="moduleIcon"
-class="fa-solid fa-circle-info"></i>
+<i
+id="moduleIcon"
+class="fa-solid fa-circle-info">
+</i>
 
-<h2 id="moduleTitle">Function</h2>
+<h2 id="moduleTitle">
+Function
+</h2>
 
 </div>
+
 
 <button
 class="back-btn"
@@ -2116,9 +2508,12 @@ Back to Dashboard
 
 </button>
 
+
 </div>
 
+
 <div id="moduleContent"></div>
+
 
 </div>
 
@@ -2127,11 +2522,17 @@ Back to Dashboard
 </main>
 
 
-<!-- ================= SUCCESS MODAL ================= -->
+<!-- =====================================================
+     SUCCESS MODAL
+===================================================== -->
 
-<div id="successModal" class="modal">
+<div
+id="successModal"
+class="modal">
+
 
 <div class="modal-content success-modal">
+
 
 <div class="success-icon">
 
@@ -2139,24 +2540,32 @@ Back to Dashboard
 
 </div>
 
+
 <h2>
 Patient Registered Successfully!
 </h2>
 
+
 <p>
+
 The patient has been successfully registered
 in the hospital management system.
+
 </p>
+
 
 <div class="patient-id-box">
 
-<small>Generated Patient ID</small>
+<small>
+Generated Patient ID
+</small>
 
 <strong id="successPatientID">
 P-1001
 </strong>
 
 </div>
+
 
 <button
 class="success-ok"
@@ -2166,15 +2575,23 @@ Continue
 
 </button>
 
+
 </div>
+
 </div>
 
 
-<!-- ================= ERROR MODAL ================= -->
+<!-- =====================================================
+     ERROR MODAL
+===================================================== -->
 
-<div id="errorModal" class="modal">
+<div
+id="errorModal"
+class="modal">
+
 
 <div class="modal-content error-modal">
+
 
 <div class="error-icon">
 
@@ -2182,13 +2599,21 @@ Continue
 
 </div>
 
-<h2>Validation Error</h2>
+
+<h2>
+Validation Error
+</h2>
+
 
 <p id="errorMessage">
+
 Please fill required fields.
+
 </p>
 
+
 <br>
+
 
 <button
 class="error-ok"
@@ -2198,19 +2623,30 @@ OK
 
 </button>
 
+
 </div>
+
 </div>
 
 
-<!-- ================= PATIENT DETAIL MODAL ================= -->
+<!-- =====================================================
+     PATIENT DETAILS MODAL
+===================================================== -->
 
-<div id="patientModal" class="modal">
+<div
+id="patientModal"
+class="modal">
+
 
 <div class="modal-content">
 
+
 <div class="modal-header">
 
-<h2>Patient Details</h2>
+<h2>
+Patient Details
+</h2>
+
 
 <button
 class="close-modal"
@@ -2222,37 +2658,51 @@ onclick="closePatientModal()">
 
 </div>
 
+
 <div
 class="modal-body"
 id="patientModalBody">
 
 </div>
 
+
 </div>
+
 </div>
 
 
-<div id="toast" class="toast"></div>
+<div
+id="toast"
+class="toast">
+</div>
 
 
 <script>
 
 /* =====================================================
-   STORAGE
+   LOCAL STORAGE
 ===================================================== */
 
 let patients =
-JSON.parse(localStorage.getItem("hospitalPatients")) || [];
+JSON.parse(
+    localStorage.getItem("hospitalPatients")
+) || [];
+
 
 let doctors =
-JSON.parse(localStorage.getItem("hospitalDoctors")) || [];
+JSON.parse(
+    localStorage.getItem("hospitalDoctors")
+) || [];
+
 
 let appointments =
-JSON.parse(localStorage.getItem("hospitalAppointments")) || [];
+JSON.parse(
+    localStorage.getItem("hospitalAppointments")
+) || [];
 
 
 /* =====================================================
-   INDIAN STATES + UT
+   STATES + UNION TERRITORIES
 ===================================================== */
 
 const indianStates = [
@@ -2304,44 +2754,176 @@ const indianStates = [
 
 const countries = [
 
-"Afghanistan","Albania","Algeria","Andorra","Angola",
-"Argentina","Armenia","Australia","Austria","Azerbaijan",
-"Bahamas","Bahrain","Bangladesh","Barbados","Belarus",
-"Belgium","Belize","Benin","Bhutan","Bolivia",
-"Bosnia and Herzegovina","Botswana","Brazil","Brunei",
-"Bulgaria","Cambodia","Cameroon","Canada","Chile",
-"China","Colombia","Costa Rica","Croatia","Cuba",
-"Cyprus","Czech Republic","Denmark","Djibouti",
-"Dominica","Dominican Republic","Ecuador","Egypt",
-"El Salvador","Estonia","Ethiopia","Fiji","Finland",
-"France","Gabon","Gambia","Georgia","Germany",
-"Ghana","Greece","Grenada","Guatemala","Guyana",
-"Haiti","Honduras","Hungary","Iceland","India",
-"Indonesia","Iran","Iraq","Ireland","Israel","Italy",
-"Jamaica","Japan","Jordan","Kazakhstan","Kenya",
-"Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia",
-"Lebanon","Lesotho","Liberia","Libya","Liechtenstein",
-"Lithuania","Luxembourg","Madagascar","Malawi",
-"Malaysia","Maldives","Mali","Malta","Mauritania",
-"Mauritius","Mexico","Moldova","Monaco","Mongolia",
-"Montenegro","Morocco","Mozambique","Myanmar",
-"Namibia","Nauru","Nepal","Netherlands",
-"New Zealand","Nicaragua","Niger","Nigeria",
-"North Korea","North Macedonia","Norway","Oman",
-"Pakistan","Palau","Panama","Papua New Guinea",
-"Paraguay","Peru","Philippines","Poland","Portugal",
-"Qatar","Romania","Russia","Rwanda","Saudi Arabia",
-"Senegal","Serbia","Seychelles","Singapore",
-"Slovakia","Slovenia","Somalia","South Africa",
-"South Korea","South Sudan","Spain","Sri Lanka",
-"Sudan","Suriname","Sweden","Switzerland","Syria",
-"Taiwan","Tajikistan","Tanzania","Thailand",
-"Timor-Leste","Togo","Tonga","Trinidad and Tobago",
-"Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda",
-"Ukraine","United Arab Emirates","United Kingdom",
-"United States","Uruguay","Uzbekistan","Vanuatu",
-"Vatican City","Venezuela","Vietnam","Yemen",
-"Zambia","Zimbabwe"
+"Afghanistan",
+"Albania",
+"Algeria",
+"Andorra",
+"Angola",
+"Argentina",
+"Armenia",
+"Australia",
+"Austria",
+"Azerbaijan",
+"Bahamas",
+"Bahrain",
+"Bangladesh",
+"Barbados",
+"Belarus",
+"Belgium",
+"Belize",
+"Benin",
+"Bhutan",
+"Bolivia",
+"Bosnia and Herzegovina",
+"Botswana",
+"Brazil",
+"Brunei",
+"Bulgaria",
+"Cambodia",
+"Cameroon",
+"Canada",
+"Chile",
+"China",
+"Colombia",
+"Costa Rica",
+"Croatia",
+"Cuba",
+"Cyprus",
+"Czech Republic",
+"Denmark",
+"Djibouti",
+"Dominica",
+"Dominican Republic",
+"Ecuador",
+"Egypt",
+"El Salvador",
+"Estonia",
+"Ethiopia",
+"Fiji",
+"Finland",
+"France",
+"Gabon",
+"Gambia",
+"Georgia",
+"Germany",
+"Ghana",
+"Greece",
+"Grenada",
+"Guatemala",
+"Guyana",
+"Haiti",
+"Honduras",
+"Hungary",
+"Iceland",
+"India",
+"Indonesia",
+"Iran",
+"Iraq",
+"Ireland",
+"Israel",
+"Italy",
+"Jamaica",
+"Japan",
+"Jordan",
+"Kazakhstan",
+"Kenya",
+"Kiribati",
+"Kuwait",
+"Kyrgyzstan",
+"Laos",
+"Latvia",
+"Lebanon",
+"Lesotho",
+"Liberia",
+"Libya",
+"Liechtenstein",
+"Lithuania",
+"Luxembourg",
+"Madagascar",
+"Malawi",
+"Malaysia",
+"Maldives",
+"Mali",
+"Malta",
+"Mauritania",
+"Mauritius",
+"Mexico",
+"Moldova",
+"Monaco",
+"Mongolia",
+"Montenegro",
+"Morocco",
+"Mozambique",
+"Myanmar",
+"Namibia",
+"Nauru",
+"Nepal",
+"Netherlands",
+"New Zealand",
+"Nicaragua",
+"Niger",
+"Nigeria",
+"North Korea",
+"North Macedonia",
+"Norway",
+"Oman",
+"Pakistan",
+"Palau",
+"Panama",
+"Papua New Guinea",
+"Paraguay",
+"Peru",
+"Philippines",
+"Poland",
+"Portugal",
+"Qatar",
+"Romania",
+"Russia",
+"Rwanda",
+"Saudi Arabia",
+"Senegal",
+"Serbia",
+"Seychelles",
+"Singapore",
+"Slovakia",
+"Slovenia",
+"Somalia",
+"South Africa",
+"South Korea",
+"South Sudan",
+"Spain",
+"Sri Lanka",
+"Sudan",
+"Suriname",
+"Sweden",
+"Switzerland",
+"Syria",
+"Taiwan",
+"Tajikistan",
+"Tanzania",
+"Thailand",
+"Timor-Leste",
+"Togo",
+"Tonga",
+"Trinidad and Tobago",
+"Tunisia",
+"Turkey",
+"Turkmenistan",
+"Tuvalu",
+"Uganda",
+"Ukraine",
+"United Arab Emirates",
+"United Kingdom",
+"United States",
+"Uruguay",
+"Uzbekistan",
+"Vanuatu",
+"Vatican City",
+"Venezuela",
+"Vietnam",
+"Yemen",
+"Zambia",
+"Zimbabwe"
 
 ];
 
@@ -2359,26 +2941,28 @@ function loadDropdowns(){
         document.getElementById("country");
 
 
-    indianStates.forEach(item => {
+    indianStates.forEach(stateName => {
 
         const option =
             document.createElement("option");
 
-        option.value = item;
-        option.textContent = item;
+        option.value = stateName;
+        option.textContent = stateName;
 
         state.appendChild(option);
 
     });
 
 
-    countries.sort().forEach(item => {
+    countries
+    .sort()
+    .forEach(countryName => {
 
         const option =
             document.createElement("option");
 
-        option.value = item;
-        option.textContent = item;
+        option.value = countryName;
+        option.textContent = countryName;
 
         country.appendChild(option);
 
@@ -2390,25 +2974,40 @@ loadDropdowns();
 
 
 /* =====================================================
-   DATE / TIME
+   DATE AND TIME
 ===================================================== */
 
 function updateDateTime(){
 
     const now = new Date();
 
+
     const months = [
-        "Jan","Feb","Mar","Apr","May","Jun",
-        "Jul","Aug","Sep","Oct","Nov","Dec"
+        "Jan","Feb","Mar","Apr",
+        "May","Jun","Jul","Aug",
+        "Sep","Oct","Nov","Dec"
     ];
+
 
     const days = [
-        "Sunday","Monday","Tuesday","Wednesday",
-        "Thursday","Friday","Saturday"
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
     ];
 
+
     const shortDays = [
-        "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
     ];
 
 
@@ -2424,14 +3023,22 @@ function updateDateTime(){
 
     let hour = now.getHours();
 
+
     const minute =
-        String(now.getMinutes()).padStart(2,"0");
+        String(
+            now.getMinutes()
+        ).padStart(2,"0");
+
 
     const second =
-        String(now.getSeconds()).padStart(2,"0");
+        String(
+            now.getSeconds()
+        ).padStart(2,"0");
+
 
     const period =
         hour >= 12 ? "PM" : "AM";
+
 
     hour = hour % 12 || 12;
 
@@ -2442,29 +3049,50 @@ function updateDateTime(){
 
 }
 
+
 updateDateTime();
 
-setInterval(updateDateTime,1000);
+setInterval(
+    updateDateTime,
+    1000
+);
 
 
 /* =====================================================
    REGISTRATION DATE
+   DEFAULT = TODAY
+   BUT USER CAN CHANGE IT
 ===================================================== */
 
 function setRegistrationDate(){
 
-    const now = new Date();
+    const today =
+        new Date();
 
-    const months = [
-        "Jan","Feb","Mar","Apr","May","Jun",
-        "Jul","Aug","Sep","Oct","Nov","Dec"
-    ];
 
-    document.getElementById("registrationDate")
-    .value =
-    `${String(now.getDate()).padStart(2,"0")} ${months[now.getMonth()]} ${now.getFullYear()}`;
+    const year =
+        today.getFullYear();
+
+
+    const month =
+        String(
+            today.getMonth() + 1
+        ).padStart(2,"0");
+
+
+    const day =
+        String(
+            today.getDate()
+        ).padStart(2,"0");
+
+
+    document.getElementById(
+        "registrationDate"
+    ).value =
+        `${year}-${month}-${day}`;
 
 }
+
 
 setRegistrationDate();
 
@@ -2475,27 +3103,37 @@ setRegistrationDate();
 
 function hidePages(){
 
-    document.getElementById("homePage")
-    .classList.add("hidden");
+    document.getElementById(
+        "homePage"
+    ).classList.add("hidden");
 
-    document.getElementById("dashboardPage")
-    .classList.add("hidden");
 
-    document.getElementById("registrationPage")
-    .classList.add("hidden");
+    document.getElementById(
+        "dashboardPage"
+    ).classList.add("hidden");
 
-    document.getElementById("modulePage")
-    .classList.add("hidden");
+
+    document.getElementById(
+        "registrationPage"
+    ).classList.add("hidden");
+
+
+    document.getElementById(
+        "modulePage"
+    ).classList.add("hidden");
 
 }
 
 
 function removeActive(){
 
-    document.querySelectorAll(".nav-button")
-    .forEach(btn =>
-        btn.classList.remove("active")
-    );
+    document
+    .querySelectorAll(".nav-button")
+    .forEach(button => {
+
+        button.classList.remove("active");
+
+    });
 
 }
 
@@ -2503,13 +3141,18 @@ function removeActive(){
 function showHome(){
 
     hidePages();
+
     removeActive();
 
-    document.getElementById("homePage")
-    .classList.remove("hidden");
 
-    document.getElementById("homeNav")
-    .classList.add("active");
+    document.getElementById(
+        "homePage"
+    ).classList.remove("hidden");
+
+
+    document.getElementById(
+        "homeNav"
+    ).classList.add("active");
 
 }
 
@@ -2517,13 +3160,19 @@ function showHome(){
 function showDashboard(){
 
     hidePages();
+
     removeActive();
 
-    document.getElementById("dashboardPage")
-    .classList.remove("hidden");
 
-    document.getElementById("dashboardNav")
-    .classList.add("active");
+    document.getElementById(
+        "dashboardPage"
+    ).classList.remove("hidden");
+
+
+    document.getElementById(
+        "dashboardNav"
+    ).classList.add("active");
+
 
     updateDashboard();
 
@@ -2536,8 +3185,11 @@ function showRegistration(){
 
     removeActive();
 
-    document.getElementById("registrationPage")
-    .classList.remove("hidden");
+
+    document.getElementById(
+        "registrationPage"
+    ).classList.remove("hidden");
+
 
     setRegistrationDate();
 
@@ -2548,130 +3200,154 @@ function showRegistration(){
    AGE CALCULATION
 ===================================================== */
 
-document.getElementById("dob")
-.addEventListener("change",function(){
+document
+.getElementById("dob")
+.addEventListener(
+    "change",
+    function(){
 
-    if(!this.value){
+        if(!this.value){
 
-        document.getElementById("age").value = "";
+            document.getElementById(
+                "age"
+            ).value = "";
 
-        return;
+            return;
+
+        }
+
+
+        const birth =
+            new Date(this.value);
+
+
+        const today =
+            new Date();
+
+
+        if(birth > today){
+
+            document.getElementById(
+                "age"
+            ).value =
+            "Invalid DOB";
+
+            return;
+
+        }
+
+
+        let age =
+            today.getFullYear() -
+            birth.getFullYear();
+
+
+        const month =
+            today.getMonth() -
+            birth.getMonth();
+
+
+        if(
+            month < 0 ||
+            (
+                month === 0 &&
+                today.getDate() <
+                birth.getDate()
+            )
+        ){
+
+            age--;
+
+        }
+
+
+        document.getElementById(
+            "age"
+        ).value =
+        age + " years";
 
     }
-
-
-    const birth = new Date(this.value);
-    const today = new Date();
-
-
-    if(birth > today){
-
-        document.getElementById("age")
-        .value = "Invalid DOB";
-
-        return;
-
-    }
-
-
-    let age =
-        today.getFullYear() -
-        birth.getFullYear();
-
-
-    const month =
-        today.getMonth() -
-        birth.getMonth();
-
-
-    if(
-        month < 0 ||
-        (
-            month === 0 &&
-            today.getDate() < birth.getDate()
-        )
-    ){
-
-        age--;
-
-    }
-
-
-    document.getElementById("age")
-    .value = age + " years";
-
-});
+);
 
 
 /* =====================================================
-   MODALS
+   ERROR MODAL
 ===================================================== */
 
 function showError(message){
 
-    document.getElementById("errorMessage")
-    .textContent = message;
+    document.getElementById(
+        "errorMessage"
+    ).textContent = message;
 
-    document.getElementById("errorModal")
-    .style.display = "flex";
+
+    document.getElementById(
+        "errorModal"
+    ).style.display = "flex";
 
 }
 
 
 function closeError(){
 
-    document.getElementById("errorModal")
-    .style.display = "none";
+    document.getElementById(
+        "errorModal"
+    ).style.display = "none";
 
 }
 
 
+/* =====================================================
+   SUCCESS MODAL
+===================================================== */
+
 function showSuccess(id){
 
-    document.getElementById("successPatientID")
-    .textContent = id;
+    document.getElementById(
+        "successPatientID"
+    ).textContent = id;
 
-    document.getElementById("successModal")
-    .style.display = "flex";
+
+    document.getElementById(
+        "successModal"
+    ).style.display = "flex";
 
 }
 
 
 function closeSuccess(){
 
-    document.getElementById("successModal")
-    .style.display = "none";
+    document.getElementById(
+        "successModal"
+    ).style.display = "none";
+
 
     displayPatients();
 
 }
 
 
-function closePatientModal(){
-
-    document.getElementById("patientModal")
-    .style.display = "none";
-
-}
-
-
 /* =====================================================
-   PATIENT ID
+   GENERATE PATIENT ID
 ===================================================== */
 
 function generatePatientID(){
 
     let number = 1001;
 
+
     while(
         patients.some(
-            p => p.id === "P-" + number
+            patient =>
+            patient.id ===
+            "P-" + number
         )
     ){
 
         number++;
 
     }
+
 
     return "P-" + number;
 
@@ -2685,205 +3361,305 @@ function generatePatientID(){
 function validateRegistration(){
 
     const name =
-        document.getElementById("fullName")
-        .value.trim();
+        document
+        .getElementById("fullName")
+        .value
+        .trim();
+
 
     const dob =
-        document.getElementById("dob").value;
+        document
+        .getElementById("dob")
+        .value;
+
 
     const gender =
         document.querySelector(
             'input[name="gender"]:checked'
         );
 
+
     const mobile =
-        document.getElementById("mobile")
-        .value.trim();
+        document
+        .getElementById("mobile")
+        .value
+        .trim();
+
 
     const alternate =
-        document.getElementById("alternatePhone")
-        .value.trim();
+        document
+        .getElementById("alternatePhone")
+        .value
+        .trim();
+
 
     const email =
-        document.getElementById("email")
-        .value.trim();
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
 
     const house =
-        document.getElementById("house")
-        .value.trim();
+        document
+        .getElementById("house")
+        .value
+        .trim();
+
 
     const street =
-        document.getElementById("street")
-        .value.trim();
+        document
+        .getElementById("street")
+        .value
+        .trim();
+
 
     const city =
-        document.getElementById("city")
-        .value.trim();
+        document
+        .getElementById("city")
+        .value
+        .trim();
+
 
     const state =
-        document.getElementById("state")
+        document
+        .getElementById("state")
         .value;
+
 
     const country =
-        document.getElementById("country")
+        document
+        .getElementById("country")
         .value;
+
 
     const pin =
-        document.getElementById("pin")
-        .value.trim();
+        document
+        .getElementById("pin")
+        .value
+        .trim();
+
 
     const emergencyName =
-        document.getElementById("emergencyName")
-        .value.trim();
+        document
+        .getElementById("emergencyName")
+        .value
+        .trim();
+
 
     const relationship =
-        document.getElementById("relationship")
+        document
+        .getElementById("relationship")
         .value;
+
 
     const emergencyPhone =
-        document.getElementById("emergencyPhone")
-        .value.trim();
+        document
+        .getElementById("emergencyPhone")
+        .value
+        .trim();
+
 
     const idType =
-        document.getElementById("idType")
+        document
+        .getElementById("idType")
         .value;
 
+
     const idNumber =
-        document.getElementById("idNumber")
-        .value.trim();
+        document
+        .getElementById("idNumber")
+        .value
+        .trim();
 
 
-    /* TC 1 */
+    const registrationDate =
+        document
+        .getElementById("registrationDate")
+        .value;
+
+
+    /* 1 NAME BLANK */
 
     if(name === ""){
 
-        showError("Name required");
+        showError(
+            "Name required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 2 */
+    /* 2 INVALID NAME */
 
-    if(!/^[A-Za-z ]+$/.test(name)){
+    if(
+        !/^[A-Za-z ]+$/.test(name)
+    ){
 
-        showError("Invalid name");
+        showError(
+            "Invalid name"
+        );
+
         return false;
 
     }
 
 
-    /* TC 3 */
+    /* 3 DOB BLANK */
 
     if(dob === ""){
 
-        showError("DOB required");
+        showError(
+            "DOB required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 4 */
+    /* 4 FUTURE DOB */
 
-    if(new Date(dob) > new Date()){
+    if(
+        new Date(dob) >
+        new Date()
+    ){
 
-        showError("Invalid DOB");
+        showError(
+            "Invalid DOB"
+        );
+
         return false;
 
     }
 
 
-    /* TC 5 */
+    /* 5 GENDER */
 
     if(!gender){
 
-        showError("Gender required");
+        showError(
+            "Gender required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 6 */
+    /* 6 MOBILE BLANK */
 
     if(mobile === ""){
 
-        showError("Mobile required");
+        showError(
+            "Mobile required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 7 */
+    /* 7 MOBILE */
 
-    if(!/^[0-9]{10}$/.test(mobile)){
+    if(
+        !/^[0-9]{10}$/.test(mobile)
+    ){
 
-        showError("Invalid mobile");
+        showError(
+            "Invalid mobile"
+        );
+
         return false;
 
     }
 
 
-    /* Alternate */
+    /* ALTERNATE */
 
     if(
         alternate !== "" &&
-        !/^[0-9]{10}$/.test(alternate)
+        !/^[0-9]{10}$/.test(
+            alternate
+        )
     ){
 
-        showError("Invalid alternate phone number");
+        showError(
+            "Invalid alternate phone number"
+        );
+
         return false;
 
     }
 
 
-    /* TC 8 */
+    /* 8 EMAIL */
 
     if(
         email !== "" &&
-        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+            email
+        )
     ){
 
-        showError("Invalid email");
+        showError(
+            "Invalid email"
+        );
+
         return false;
 
     }
 
 
-    /* TC 9 */
+    /* 9 HOUSE */
 
     if(house === ""){
 
-        showError("House No. required");
+        showError(
+            "House No. required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 10 */
+    /* 10 STREET */
 
     if(street === ""){
 
-        showError("Street required");
+        showError(
+            "Street required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 11 */
+    /* 11 CITY */
 
     if(city === ""){
 
-        showError("City required");
+        showError(
+            "City required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 12 */
+    /* 12 STATE */
 
     if(state === ""){
 
-        showError("State required");
+        showError(
+            "State required"
+        );
+
         return false;
 
     }
@@ -2893,91 +3669,156 @@ function validateRegistration(){
 
     if(country === ""){
 
-        showError("Country required");
+        showError(
+            "Country required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 13 */
+    /* 13 PIN */
 
     if(pin === ""){
 
-        showError("PIN required");
+        showError(
+            "PIN required"
+        );
+
         return false;
 
     }
 
 
-    if(!/^[0-9]{6}$/.test(pin)){
+    if(
+        !/^[0-9]{6}$/.test(pin)
+    ){
 
-        showError("Invalid PIN");
+        showError(
+            "Invalid PIN"
+        );
+
         return false;
 
     }
 
 
-    /* TC 14 */
+    /* 14 EMERGENCY NAME */
 
-    if(emergencyName === ""){
+    if(
+        emergencyName === ""
+    ){
 
-        showError("Emergency name required");
+        showError(
+            "Emergency name required"
+        );
+
         return false;
 
     }
 
 
-    if(!/^[A-Za-z ]+$/.test(emergencyName)){
+    if(
+        !/^[A-Za-z ]+$/.test(
+            emergencyName
+        )
+    ){
 
-        showError("Invalid emergency name");
+        showError(
+            "Invalid emergency name"
+        );
+
         return false;
 
     }
 
 
-    /* TC 16 */
+    /* 15 EMERGENCY NUMBER */
 
-    if(relationship === ""){
+    if(
+        emergencyPhone === ""
+    ){
 
-        showError("Relationship required");
+        showError(
+            "Emergency number required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 15 */
+    if(
+        !/^[0-9]{10}$/.test(
+            emergencyPhone
+        )
+    ){
 
-    if(emergencyPhone === ""){
+        showError(
+            "Invalid emergency number"
+        );
 
-        showError("Emergency number required");
         return false;
 
     }
 
 
-    if(!/^[0-9]{10}$/.test(emergencyPhone)){
+    /* 16 RELATIONSHIP */
 
-        showError("Invalid emergency number");
+    if(
+        relationship === ""
+    ){
+
+        showError(
+            "Relationship required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 17 */
+    /* 17 ID TYPE */
 
-    if(idType === ""){
+    if(
+        idType === ""
+    ){
 
-        showError("ID proof required");
+        showError(
+            "ID proof required"
+        );
+
         return false;
 
     }
 
 
-    /* TC 18 */
+    /* 18 ID NUMBER */
 
-    if(idNumber === ""){
+    if(
+        idNumber === ""
+    ){
 
-        showError("ID number required");
+        showError(
+            "ID number required"
+        );
+
+        return false;
+
+    }
+
+
+    /* REGISTRATION DATE */
+
+    if(
+        registrationDate === ""
+    ){
+
+        showError(
+            "Registration date required"
+        );
+
         return false;
 
     }
@@ -2992,132 +3833,231 @@ function validateRegistration(){
    REGISTER PATIENT
 ===================================================== */
 
-document.getElementById("registrationForm")
-.addEventListener("submit",function(e){
+document
+.getElementById("registrationForm")
+.addEventListener(
+    "submit",
+    function(event){
 
-    e.preventDefault();
+        event.preventDefault();
 
 
-    if(!validateRegistration()){
+        if(
+            !validateRegistration()
+        ){
 
-        return;
+            return;
+
+        }
+
+
+        const gender =
+            document.querySelector(
+                'input[name="gender"]:checked'
+            ).value;
+
+
+        const patient = {
+
+            id:
+                generatePatientID(),
+
+            name:
+                document
+                .getElementById("fullName")
+                .value
+                .trim(),
+
+            dob:
+                document
+                .getElementById("dob")
+                .value,
+
+            age:
+                document
+                .getElementById("age")
+                .value,
+
+            gender:
+                gender,
+
+            blood:
+                document
+                .getElementById("bloodGroup")
+                .value,
+
+            marital:
+                document
+                .getElementById("maritalStatus")
+                .value,
+
+            mobile:
+                document
+                .getElementById("mobile")
+                .value
+                .trim(),
+
+            alternate:
+                document
+                .getElementById("alternatePhone")
+                .value
+                .trim(),
+
+            email:
+                document
+                .getElementById("email")
+                .value
+                .trim(),
+
+            house:
+                document
+                .getElementById("house")
+                .value
+                .trim(),
+
+            street:
+                document
+                .getElementById("street")
+                .value
+                .trim(),
+
+            city:
+                document
+                .getElementById("city")
+                .value
+                .trim(),
+
+            state:
+                document
+                .getElementById("state")
+                .value,
+
+            country:
+                document
+                .getElementById("country")
+                .value,
+
+            pin:
+                document
+                .getElementById("pin")
+                .value
+                .trim(),
+
+            emergencyName:
+                document
+                .getElementById("emergencyName")
+                .value
+                .trim(),
+
+            relationship:
+                document
+                .getElementById("relationship")
+                .value,
+
+            emergencyPhone:
+                document
+                .getElementById("emergencyPhone")
+                .value
+                .trim(),
+
+            idType:
+                document
+                .getElementById("idType")
+                .value,
+
+            idNumber:
+                document
+                .getElementById("idNumber")
+                .value
+                .trim(),
+
+            registrationDate:
+                document
+                .getElementById(
+                    "registrationDate"
+                )
+                .value
+
+        };
+
+
+        patients.push(patient);
+
+
+        localStorage.setItem(
+            "hospitalPatients",
+            JSON.stringify(patients)
+        );
+
+
+        displayPatients();
+
+        updateDashboard();
+
+
+        this.reset();
+
+
+        document.getElementById(
+            "age"
+        ).value = "";
+
+
+        setRegistrationDate();
+
+
+        showSuccess(
+            patient.id
+        );
+
+    }
+);
+
+
+/* =====================================================
+   FORMAT DATE
+===================================================== */
+
+function formatDOB(date){
+
+    if(!date)
+        return "";
+
+
+    const parts =
+        date.split("-");
+
+
+    return `${parts[2]}-${parts[1]}-${parts[0]}`;
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    if(
+        value === undefined ||
+        value === null
+    ){
+
+        return "";
 
     }
 
 
-    const gender =
-        document.querySelector(
-            'input[name="gender"]:checked'
-        ).value;
+    return String(value)
 
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
-    const patient = {
-
-        id:generatePatientID(),
-
-        name:
-        document.getElementById("fullName")
-        .value.trim(),
-
-        dob:
-        document.getElementById("dob").value,
-
-        age:
-        document.getElementById("age").value,
-
-        gender:gender,
-
-        blood:
-        document.getElementById("bloodGroup").value,
-
-        marital:
-        document.getElementById("maritalStatus").value,
-
-        mobile:
-        document.getElementById("mobile")
-        .value.trim(),
-
-        alternate:
-        document.getElementById("alternatePhone")
-        .value.trim(),
-
-        email:
-        document.getElementById("email")
-        .value.trim(),
-
-        house:
-        document.getElementById("house")
-        .value.trim(),
-
-        street:
-        document.getElementById("street")
-        .value.trim(),
-
-        city:
-        document.getElementById("city")
-        .value.trim(),
-
-        state:
-        document.getElementById("state").value,
-
-        country:
-        document.getElementById("country").value,
-
-        pin:
-        document.getElementById("pin")
-        .value.trim(),
-
-        emergencyName:
-        document.getElementById("emergencyName")
-        .value.trim(),
-
-        relationship:
-        document.getElementById("relationship")
-        .value,
-
-        emergencyPhone:
-        document.getElementById("emergencyPhone")
-        .value.trim(),
-
-        idType:
-        document.getElementById("idType")
-        .value,
-
-        idNumber:
-        document.getElementById("idNumber")
-        .value.trim(),
-
-        registrationDate:
-        document.getElementById("registrationDate")
-        .value
-
-    };
-
-
-    patients.push(patient);
-
-
-    localStorage.setItem(
-        "hospitalPatients",
-        JSON.stringify(patients)
-    );
-
-
-    displayPatients();
-
-    updateDashboard();
-
-
-    this.reset();
-
-    document.getElementById("age").value = "";
-
-    setRegistrationDate();
-
-
-    showSuccess(patient.id);
-
-});
+}
 
 
 /* =====================================================
@@ -3131,26 +4071,36 @@ function displayPatients(){
             "patientTableBody"
         );
 
+
     tbody.innerHTML = "";
 
 
-    document.getElementById("patientCount")
-    .textContent = patients.length;
+    document.getElementById(
+        "patientCount"
+    ).textContent =
+        patients.length;
 
 
     const empty =
-        document.getElementById("emptyMessage");
+        document.getElementById(
+            "emptyMessage"
+        );
 
 
-    if(patients.length === 0){
+    if(
+        patients.length === 0
+    ){
 
-        empty.style.display = "block";
+        empty.style.display =
+            "block";
+
         return;
 
     }
 
 
-    empty.style.display = "none";
+    empty.style.display =
+        "none";
 
 
     patients.forEach(patient => {
@@ -3178,9 +4128,11 @@ function displayPatients(){
         </td>
 
         <td>
+
             <span class="gender-badge">
                 ${escapeHTML(patient.gender)}
             </span>
+
         </td>
 
         <td>
@@ -3200,6 +4152,10 @@ function displayPatients(){
         </td>
 
         <td>
+            ${formatDOB(patient.registrationDate)}
+        </td>
+
+        <td>
 
             <button
             class="view-btn"
@@ -3208,6 +4164,7 @@ function displayPatients(){
             <i class="fa-solid fa-eye"></i>
 
             </button>
+
 
             <button
             class="delete-btn"
@@ -3230,52 +4187,19 @@ function displayPatients(){
 
 
 /* =====================================================
-   FORMAT DOB
-===================================================== */
-
-function formatDOB(date){
-
-    if(!date) return "";
-
-    const p = date.split("-");
-
-    return `${p[2]}-${p[1]}-${p[0]}`;
-
-}
-
-
-/* =====================================================
-   SECURITY
-===================================================== */
-
-function escapeHTML(value){
-
-    if(value === undefined || value === null)
-        return "";
-
-    return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
    VIEW PATIENT
 ===================================================== */
 
 function viewPatient(id){
 
-    const p =
+    const patient =
         patients.find(
-            patient => patient.id === id
+            p => p.id === id
         );
 
 
-    if(!p) return;
+    if(!patient)
+        return;
 
 
     document.getElementById(
@@ -3284,110 +4208,292 @@ function viewPatient(id){
 
     <div class="detail-grid">
 
-        <div class="detail-item">
-            <strong>Patient ID</strong>
-            <span>${escapeHTML(p.id)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Full Name</strong>
-            <span>${escapeHTML(p.name)}</span>
+
+            <strong>
+            Patient ID
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.id)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>Date of Birth</strong>
-            <span>${formatDOB(p.dob)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Age</strong>
-            <span>${escapeHTML(p.age)}</span>
+
+            <strong>
+            Full Name
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.name)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>Gender</strong>
-            <span>${escapeHTML(p.gender)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Blood Group</strong>
-            <span>${escapeHTML(p.blood)}</span>
+
+            <strong>
+            Date of Birth
+            </strong>
+
+            <span>
+            ${formatDOB(patient.dob)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>Marital Status</strong>
-            <span>${escapeHTML(p.marital || "Not provided")}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Mobile</strong>
-            <span>${escapeHTML(p.mobile)}</span>
+
+            <strong>
+            Age
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.age)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>Email</strong>
-            <span>${escapeHTML(p.email || "Not provided")}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>House / Flat</strong>
-            <span>${escapeHTML(p.house)}</span>
+
+            <strong>
+            Gender
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.gender)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>Street / Locality</strong>
-            <span>${escapeHTML(p.street)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>City</strong>
-            <span>${escapeHTML(p.city)}</span>
+
+            <strong>
+            Blood Group
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.blood)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>State / UT</strong>
-            <span>${escapeHTML(p.state)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Country</strong>
-            <span>${escapeHTML(p.country)}</span>
+
+            <strong>
+            Marital Status
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.marital || "Not provided")}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>PIN Code</strong>
-            <span>${escapeHTML(p.pin)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Emergency Name</strong>
-            <span>${escapeHTML(p.emergencyName)}</span>
+
+            <strong>
+            Mobile
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.mobile)}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>Relationship</strong>
-            <span>${escapeHTML(p.relationship)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>Emergency Number</strong>
-            <span>${escapeHTML(p.emergencyPhone)}</span>
+
+            <strong>
+            Alternate Phone
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.alternate || "Not provided")}
+            </span>
+
         </div>
 
-        <div class="detail-item">
-            <strong>ID Proof Type</strong>
-            <span>${escapeHTML(p.idType)}</span>
-        </div>
 
         <div class="detail-item">
-            <strong>ID Proof Number</strong>
-            <span>${escapeHTML(p.idNumber)}</span>
+
+            <strong>
+            Email
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.email || "Not provided")}
+            </span>
+
         </div>
 
+
         <div class="detail-item">
-            <strong>Registration Date</strong>
-            <span>${escapeHTML(p.registrationDate)}</span>
+
+            <strong>
+            House / Flat
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.house)}
+            </span>
+
         </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            Street / Locality
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.street)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            City
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.city)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            State / UT
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.state)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            Country
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.country)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            PIN Code
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.pin)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            Emergency Contact
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.emergencyName)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            Relationship
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.relationship)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            Emergency Number
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.emergencyPhone)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            ID Proof Type
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.idType)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            ID Proof Number
+            </strong>
+
+            <span>
+            ${escapeHTML(patient.idNumber)}
+            </span>
+
+        </div>
+
+
+        <div class="detail-item">
+
+            <strong>
+            Registration Date
+            </strong>
+
+            <span>
+            ${formatDOB(patient.registrationDate)}
+            </span>
+
+        </div>
+
 
     </div>
 
@@ -3396,7 +4502,8 @@ function viewPatient(id){
 
     document.getElementById(
         "patientModal"
-    ).style.display = "flex";
+    ).style.display =
+        "flex";
 
 }
 
@@ -3407,23 +4514,32 @@ function viewPatient(id){
 
 function deletePatient(id){
 
-    const p =
+    const patient =
         patients.find(
-            patient => patient.id === id
+            p => p.id === id
         );
 
 
-    if(!p) return;
+    if(!patient)
+        return;
 
 
-    if(!confirm(
-        "Delete patient " + p.name + "?"
-    )) return;
+    if(
+        !confirm(
+            "Delete patient " +
+            patient.name +
+            "?"
+        )
+    ){
+
+        return;
+
+    }
 
 
     patients =
         patients.filter(
-            patient => patient.id !== id
+            p => p.id !== id
         );
 
 
@@ -3437,6 +4553,7 @@ function deletePatient(id){
 
     updateDashboard();
 
+
     showToast(
         "Patient deleted successfully."
     );
@@ -3445,29 +4562,33 @@ function deletePatient(id){
 
 
 /* =====================================================
-   DASHBOARD
+   DASHBOARD UPDATE
 ===================================================== */
 
 function updateDashboard(){
 
     document.getElementById(
         "totalPatients"
-    ).textContent = patients.length;
+    ).textContent =
+        patients.length;
 
 
     document.getElementById(
         "newPatients"
-    ).textContent = patients.length;
+    ).textContent =
+        patients.length;
 
 
     document.getElementById(
         "totalDoctors"
-    ).textContent = doctors.length;
+    ).textContent =
+        doctors.length;
 
 
     document.getElementById(
         "totalAppointments"
-    ).textContent = appointments.length;
+    ).textContent =
+        appointments.length;
 
 
     const tbody =
@@ -3482,7 +4603,7 @@ function updateDashboard(){
     [...patients]
     .reverse()
     .slice(0,5)
-    .forEach(p => {
+    .forEach(patient => {
 
         const row =
             document.createElement("tr");
@@ -3491,18 +4612,45 @@ function updateDashboard(){
         row.innerHTML = `
 
         <td class="patient-id">
-            ${escapeHTML(p.id)}
+
+            ${escapeHTML(patient.id)}
+
         </td>
 
-        <td>${escapeHTML(p.name)}</td>
 
-        <td>${escapeHTML(p.gender)}</td>
+        <td>
 
-        <td>${escapeHTML(p.age)}</td>
+            ${escapeHTML(patient.name)}
 
-        <td>${escapeHTML(p.mobile)}</td>
+        </td>
 
-        <td>${escapeHTML(p.registrationDate)}</td>
+
+        <td>
+
+            ${escapeHTML(patient.gender)}
+
+        </td>
+
+
+        <td>
+
+            ${escapeHTML(patient.age)}
+
+        </td>
+
+
+        <td>
+
+            ${escapeHTML(patient.mobile)}
+
+        </td>
+
+
+        <td>
+
+            ${formatDOB(patient.registrationDate)}
+
+        </td>
 
         `;
 
@@ -3515,7 +4663,7 @@ function updateDashboard(){
 
 
 /* =====================================================
-   DASHBOARD FUNCTIONS
+   DASHBOARD MODULES
 ===================================================== */
 
 function openFunction(type){
@@ -3529,20 +4677,29 @@ function openFunction(type){
 
 
     const title =
-        document.getElementById("moduleTitle");
+        document.getElementById(
+            "moduleTitle"
+        );
+
 
     const icon =
-        document.getElementById("moduleIcon");
+        document.getElementById(
+            "moduleIcon"
+        );
+
 
     const content =
-        document.getElementById("moduleContent");
+        document.getElementById(
+            "moduleContent"
+        );
 
 
     /* LOGIN */
 
     if(type === "login"){
 
-        title.textContent = "Login";
+        title.textContent =
+            "Login";
 
         icon.className =
             "fa-solid fa-right-to-bracket";
@@ -3554,22 +4711,30 @@ function openFunction(type){
 
             <div class="module-box">
 
-                <h3>Current Login</h3>
+                <h3>
+                Current Login
+                </h3>
 
                 <p>
 
                 Staff Name:
-                <strong>Registration Staff</strong>
+                <strong>
+                Registration Staff
+                </strong>
 
                 <br>
 
                 Staff ID:
-                <strong>RS-001</strong>
+                <strong>
+                RS-001
+                </strong>
 
                 <br>
 
                 Role:
-                <strong>Registration Staff</strong>
+                <strong>
+                Registration Staff
+                </strong>
 
                 <br>
 
@@ -3585,11 +4750,15 @@ function openFunction(type){
 
             <div class="module-box">
 
-                <h3>Authentication</h3>
+                <h3>
+                Authentication
+                </h3>
 
                 <p>
+
                 Current staff session is active.
                 Logout is available from the header.
+
                 </p>
 
             </div>
@@ -3601,7 +4770,7 @@ function openFunction(type){
     }
 
 
-    /* UPDATE */
+    /* UPDATE PATIENT */
 
     if(type === "update"){
 
@@ -3616,7 +4785,10 @@ function openFunction(type){
 
         <div class="module-box">
 
-            <h3>Search Patient</h3>
+            <h3>
+            Update Patient
+            </h3>
+
 
             <div class="module-form">
 
@@ -3629,6 +4801,7 @@ function openFunction(type){
 
                 </div>
 
+
                 <div>
 
                     <input
@@ -3637,6 +4810,7 @@ function openFunction(type){
                     placeholder="New name">
 
                 </div>
+
 
                 <div>
 
@@ -3648,6 +4822,7 @@ function openFunction(type){
                 </div>
 
             </div>
+
 
             <button
             class="module-action"
@@ -3681,7 +4856,10 @@ function openFunction(type){
 
         <div class="module-box">
 
-            <h3>Next Available Patient ID</h3>
+            <h3>
+            Next Available Patient ID
+            </h3>
+
 
             <p style="
             font-size:32px;
@@ -3694,9 +4872,12 @@ function openFunction(type){
 
             </p>
 
+
             <p>
+
             This ID is automatically assigned
             during new patient registration.
+
             </p>
 
         </div>
@@ -3721,7 +4902,10 @@ function openFunction(type){
 
         <div class="module-box">
 
-            <h3>Register Doctor</h3>
+            <h3>
+            Register Doctor
+            </h3>
+
 
             <div class="module-form">
 
@@ -3730,12 +4914,14 @@ function openFunction(type){
                 class="module-input"
                 placeholder="Doctor Name">
 
+
                 <input
                 id="doctorDepartment"
                 class="module-input"
                 placeholder="Department">
 
             </div>
+
 
             <button
             class="module-action"
@@ -3750,16 +4936,20 @@ function openFunction(type){
         </div>
 
 
-        <div class="module-box"
+        <div
+        class="module-box"
         style="margin-top:15px;">
 
-            <h3>Registered Doctors</h3>
+            <h3>
+            Registered Doctors
+            </h3>
 
             <div id="doctorList"></div>
 
         </div>
 
         `;
+
 
         displayDoctors();
 
@@ -3781,7 +4971,10 @@ function openFunction(type){
 
         <div class="module-box">
 
-            <h3>Doctor Availability</h3>
+            <h3>
+            Doctor Availability
+            </h3>
+
 
             <select
             id="availabilityDoctor"
@@ -3793,7 +4986,9 @@ function openFunction(type){
 
             </select>
 
+
             <br>
+
 
             <button
             class="module-action"
@@ -3802,6 +4997,7 @@ function openFunction(type){
             Check Availability
 
             </button>
+
 
             <div
             id="availabilityResult"
@@ -3820,17 +5016,25 @@ function openFunction(type){
             );
 
 
-        doctors.forEach(d => {
+        doctors.forEach(doctor => {
 
             const option =
-                document.createElement("option");
+                document.createElement(
+                    "option"
+                );
 
-            option.value = d.id;
+
+            option.value =
+                doctor.id;
+
 
             option.textContent =
-                `${d.name} - ${d.department}`;
+                `${doctor.name} - ${doctor.department}`;
 
-            select.appendChild(option);
+
+            select.appendChild(
+                option
+            );
 
         });
 
@@ -3852,14 +5056,19 @@ function openFunction(type){
 
         <div class="module-box">
 
-            <h3>Search Patient History</h3>
+            <h3>
+            Search Patient History
+            </h3>
+
 
             <input
             id="historyID"
             class="module-input"
             placeholder="Patient ID e.g. P-1001">
 
+
             <br>
+
 
             <button
             class="module-action"
@@ -3870,6 +5079,7 @@ function openFunction(type){
             View History
 
             </button>
+
 
             <div
             id="historyResult"
@@ -3899,31 +5109,40 @@ function openFunction(type){
 
         <div class="module-box">
 
-            <h3>Create New Appointment</h3>
+            <h3>
+            Create New Appointment
+            </h3>
+
 
             <div class="module-form">
+
 
                 <input
                 id="appointmentPatient"
                 class="module-input"
                 placeholder="Patient ID">
 
+
                 <input
                 id="appointmentDoctor"
                 class="module-input"
                 placeholder="Doctor Name">
+
 
                 <input
                 id="appointmentDate"
                 type="date"
                 class="module-input">
 
+
                 <input
                 id="appointmentTime"
                 type="time"
                 class="module-input">
 
+
             </div>
+
 
             <button
             class="module-action"
@@ -3942,13 +5161,19 @@ function openFunction(type){
         class="module-box"
         style="margin-top:15px;">
 
-            <h3>Appointments</h3>
+            <h3>
+            Appointments
+            </h3>
 
-            <div id="appointmentList"></div>
+
+            <div
+            id="appointmentList">
+            </div>
 
         </div>
 
         `;
+
 
         displayAppointments();
 
@@ -3964,27 +5189,37 @@ function openFunction(type){
 function updatePatient(){
 
     const id =
-        document.getElementById("updateID")
-        .value.trim();
+        document
+        .getElementById("updateID")
+        .value
+        .trim();
+
 
     const name =
-        document.getElementById("updateName")
-        .value.trim();
+        document
+        .getElementById("updateName")
+        .value
+        .trim();
+
 
     const mobile =
-        document.getElementById("updateMobile")
-        .value.trim();
+        document
+        .getElementById("updateMobile")
+        .value
+        .trim();
 
 
-    const p =
+    const patient =
         patients.find(
-            patient => patient.id === id
+            p => p.id === id
         );
 
 
-    if(!p){
+    if(!patient){
 
-        showError("Patient not found.");
+        showError(
+            "Patient not found."
+        );
 
         return;
 
@@ -3996,7 +5231,9 @@ function updatePatient(){
         !/^[A-Za-z ]+$/.test(name)
     ){
 
-        showError("Invalid name");
+        showError(
+            "Invalid name"
+        );
 
         return;
 
@@ -4008,7 +5245,9 @@ function updatePatient(){
         !/^[0-9]{10}$/.test(mobile)
     ){
 
-        showError("Invalid mobile");
+        showError(
+            "Invalid mobile"
+        );
 
         return;
 
@@ -4016,11 +5255,11 @@ function updatePatient(){
 
 
     if(name !== "")
-        p.name = name;
+        patient.name = name;
 
 
     if(mobile !== "")
-        p.mobile = mobile;
+        patient.mobile = mobile;
 
 
     localStorage.setItem(
@@ -4032,6 +5271,7 @@ function updatePatient(){
     displayPatients();
 
     updateDashboard();
+
 
     showToast(
         "Patient details updated successfully."
@@ -4047,17 +5287,26 @@ function updatePatient(){
 function registerDoctor(){
 
     const name =
-        document.getElementById("doctorName")
-        .value.trim();
+        document
+        .getElementById("doctorName")
+        .value
+        .trim();
+
 
     const department =
-        document.getElementById("doctorDepartment")
-        .value.trim();
+        document
+        .getElementById(
+            "doctorDepartment"
+        )
+        .value
+        .trim();
 
 
     if(name === ""){
 
-        showError("Doctor name required.");
+        showError(
+            "Doctor name required."
+        );
 
         return;
 
@@ -4066,7 +5315,9 @@ function registerDoctor(){
 
     if(department === ""){
 
-        showError("Department required.");
+        showError(
+            "Department required."
+        );
 
         return;
 
@@ -4075,18 +5326,25 @@ function registerDoctor(){
 
     const doctor = {
 
-        id:"D-" + (doctors.length + 101),
+        id:
+            "D-" +
+            (doctors.length + 101),
 
-        name:name,
+        name:
+            name,
 
-        department:department,
+        department:
+            department,
 
-        available:true
+        available:
+            true
 
     };
 
 
-    doctors.push(doctor);
+    doctors.push(
+        doctor
+    );
 
 
     localStorage.setItem(
@@ -4098,6 +5356,7 @@ function registerDoctor(){
     displayDoctors();
 
     updateDashboard();
+
 
     showToast(
         "Doctor registered successfully."
@@ -4113,18 +5372,26 @@ function registerDoctor(){
 function displayDoctors(){
 
     const list =
-        document.getElementById("doctorList");
+        document.getElementById(
+            "doctorList"
+        );
 
 
-    if(!list) return;
+    if(!list)
+        return;
 
 
     if(doctors.length === 0){
 
-        list.innerHTML =
-        `<p style="color:#7890a5">
+        list.innerHTML = `
+
+        <p style="color:#7890a5">
+
         No doctors registered yet.
-        </p>`;
+
+        </p>
+
+        `;
 
         return;
 
@@ -4132,29 +5399,33 @@ function displayDoctors(){
 
 
     list.innerHTML =
-        doctors.map(d => `
+        doctors
+        .map(doctor => `
 
         <div style="
         padding:10px;
         border-bottom:1px solid #dce8ef;">
 
         <strong>
-        ${escapeHTML(d.id)}
+        ${escapeHTML(doctor.id)}
         </strong>
 
         -
-        ${escapeHTML(d.name)}
+        ${escapeHTML(doctor.name)}
 
         <br>
 
         <small>
+
         Department:
-        ${escapeHTML(d.department)}
+        ${escapeHTML(doctor.department)}
+
         </small>
 
         </div>
 
-        `).join("");
+        `)
+        .join("");
 
 }
 
@@ -4166,14 +5437,18 @@ function displayDoctors(){
 function checkAvailability(){
 
     const id =
-        document.getElementById(
+        document
+        .getElementById(
             "availabilityDoctor"
-        ).value;
+        )
+        .value;
 
 
     if(!id){
 
-        showError("Please select a doctor.");
+        showError(
+            "Please select a doctor."
+        );
 
         return;
 
@@ -4181,7 +5456,9 @@ function checkAvailability(){
 
 
     const doctor =
-        doctors.find(d => d.id === id);
+        doctors.find(
+            d => d.id === id
+        );
 
 
     document.getElementById(
@@ -4217,18 +5494,25 @@ function checkAvailability(){
 function showHistory(){
 
     const id =
-        document.getElementById(
+        document
+        .getElementById(
             "historyID"
-        ).value.trim();
+        )
+        .value
+        .trim();
 
 
     const patient =
-        patients.find(p => p.id === id);
+        patients.find(
+            p => p.id === id
+        );
 
 
     if(!patient){
 
-        showError("Patient not found.");
+        showError(
+            "Patient not found."
+        );
 
         return;
 
@@ -4237,7 +5521,8 @@ function showHistory(){
 
     const history =
         appointments.filter(
-            a => a.patientID === id
+            appointment =>
+            appointment.patientID === id
         );
 
 
@@ -4248,22 +5533,33 @@ function showHistory(){
     <div class="module-box">
 
         <h3>
+
         ${escapeHTML(patient.name)}
+
         </h3>
 
+
         <p>
+
         Patient ID:
-        <strong>${escapeHTML(patient.id)}</strong>
+
+        <strong>
+        ${escapeHTML(patient.id)}
+        </strong>
 
         <br><br>
 
         Registration Date:
-        ${escapeHTML(patient.registrationDate)}
+
+        ${formatDOB(patient.registrationDate)}
 
         <br><br>
 
         Total Appointments:
-        <strong>${history.length}</strong>
+
+        <strong>
+        ${history.length}
+        </strong>
 
         </p>
 
@@ -4281,29 +5577,44 @@ function showHistory(){
 function createAppointment(){
 
     const patientID =
-        document.getElementById(
+        document
+        .getElementById(
             "appointmentPatient"
-        ).value.trim();
+        )
+        .value
+        .trim();
+
 
     const doctor =
-        document.getElementById(
+        document
+        .getElementById(
             "appointmentDoctor"
-        ).value.trim();
+        )
+        .value
+        .trim();
+
 
     const date =
-        document.getElementById(
+        document
+        .getElementById(
             "appointmentDate"
-        ).value;
+        )
+        .value;
+
 
     const time =
-        document.getElementById(
+        document
+        .getElementById(
             "appointmentTime"
-        ).value;
+        )
+        .value;
 
 
     if(patientID === ""){
 
-        showError("Patient ID required.");
+        showError(
+            "Patient ID required."
+        );
 
         return;
 
@@ -4316,7 +5627,9 @@ function createAppointment(){
         )
     ){
 
-        showError("Patient not found.");
+        showError(
+            "Patient not found."
+        );
 
         return;
 
@@ -4325,7 +5638,9 @@ function createAppointment(){
 
     if(doctor === ""){
 
-        showError("Doctor name required.");
+        showError(
+            "Doctor name required."
+        );
 
         return;
 
@@ -4334,7 +5649,9 @@ function createAppointment(){
 
     if(date === ""){
 
-        showError("Appointment date required.");
+        showError(
+            "Appointment date required."
+        );
 
         return;
 
@@ -4343,7 +5660,9 @@ function createAppointment(){
 
     if(time === ""){
 
-        showError("Appointment time required.");
+        showError(
+            "Appointment time required."
+        );
 
         return;
 
@@ -4353,30 +5672,39 @@ function createAppointment(){
     appointments.push({
 
         id:
-        "A-" + (appointments.length + 1001),
+            "A-" +
+            (appointments.length + 1001),
 
-        patientID:patientID,
+        patientID:
+            patientID,
 
-        doctor:doctor,
+        doctor:
+            doctor,
 
-        date:date,
+        date:
+            date,
 
-        time:time,
+        time:
+            time,
 
-        status:"Scheduled"
+        status:
+            "Scheduled"
 
     });
 
 
     localStorage.setItem(
         "hospitalAppointments",
-        JSON.stringify(appointments)
+        JSON.stringify(
+            appointments
+        )
     );
 
 
     displayAppointments();
 
     updateDashboard();
+
 
     showToast(
         "Appointment created successfully."
@@ -4397,15 +5725,23 @@ function displayAppointments(){
         );
 
 
-    if(!list) return;
+    if(!list)
+        return;
 
 
-    if(appointments.length === 0){
+    if(
+        appointments.length === 0
+    ){
 
-        list.innerHTML =
-        `<p style="color:#7890a5">
+        list.innerHTML = `
+
+        <p style="color:#7890a5">
+
         No appointments available.
-        </p>`;
+
+        </p>
+
+        `;
 
         return;
 
@@ -4413,46 +5749,54 @@ function displayAppointments(){
 
 
     list.innerHTML =
-        appointments.map(a => `
+        appointments
+        .map(appointment => `
 
         <div style="
         padding:12px;
         border-bottom:1px solid #dce8ef;">
 
-        <strong>${escapeHTML(a.id)}</strong>
+        <strong>
+        ${escapeHTML(appointment.id)}
+        </strong>
 
         <br>
 
         Patient:
-        ${escapeHTML(a.patientID)}
+        ${escapeHTML(appointment.patientID)}
 
         <br>
 
         Doctor:
-        ${escapeHTML(a.doctor)}
+        ${escapeHTML(appointment.doctor)}
 
         <br>
 
         Date:
-        ${escapeHTML(a.date)}
+        ${escapeHTML(appointment.date)}
 
-        &nbsp; Time:
-        ${escapeHTML(a.time)}
+        &nbsp;
+
+        Time:
+        ${escapeHTML(appointment.time)}
 
         <br>
 
         Status:
-        <strong>${escapeHTML(a.status)}</strong>
+        <strong>
+        ${escapeHTML(appointment.status)}
+        </strong>
 
         <br><br>
 
+
         ${
-            a.status === "Scheduled"
+            appointment.status === "Scheduled"
 
             ?
 
             `<button
-            onclick="cancelAppointment('${a.id}')"
+            onclick="cancelAppointment('${appointment.id}')"
             style="
             border:none;
             background:#ffe9ed;
@@ -4467,13 +5811,17 @@ function displayAppointments(){
             :
 
             `<span style="color:#d8324b">
+
             Appointment Cancelled
+
             </span>`
+
         }
 
         </div>
 
-        `).join("");
+        `)
+        .join("");
 
 }
 
@@ -4490,14 +5838,19 @@ function cancelAppointment(id){
         );
 
 
-    if(!appointment) return;
+    if(!appointment)
+        return;
 
 
     if(
         !confirm(
             "Cancel this appointment?"
         )
-    ) return;
+    ){
+
+        return;
+
+    }
 
 
     appointment.status =
@@ -4506,13 +5859,16 @@ function cancelAppointment(id){
 
     localStorage.setItem(
         "hospitalAppointments",
-        JSON.stringify(appointments)
+        JSON.stringify(
+            appointments
+        )
     );
 
 
     displayAppointments();
 
     updateDashboard();
+
 
     showToast(
         "Appointment cancelled successfully."
@@ -4528,19 +5884,28 @@ function cancelAppointment(id){
 function showToast(message){
 
     const toast =
-        document.getElementById("toast");
+        document.getElementById(
+            "toast"
+        );
 
 
-    toast.textContent = message;
+    toast.textContent =
+        message;
 
-    toast.style.display = "block";
+
+    toast.style.display =
+        "block";
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        toast.style.display = "none";
+            toast.style.display =
+                "none";
 
-    },2500);
+        },
+        2500
+    );
 
 }
 
@@ -4559,6 +5924,7 @@ function logout(){
 
         showHome();
 
+
         showToast(
             "Logout successful."
         );
@@ -4569,39 +5935,43 @@ function logout(){
 
 
 /* =====================================================
-   RESET
+   RESET FORM
 ===================================================== */
 
-document.getElementById(
-    "registrationForm"
-).addEventListener(
+document
+.getElementById("registrationForm")
+.addEventListener(
     "reset",
     function(){
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            document.getElementById(
-                "age"
-            ).value = "";
+                document.getElementById(
+                    "age"
+                ).value = "";
 
-            setRegistrationDate();
 
-        },0);
+                setRegistrationDate();
+
+            },
+            0
+        );
 
     }
 );
 
 
 /* =====================================================
-   CLOSE MODALS
+   CLOSE MODALS BY CLICKING OUTSIDE
 ===================================================== */
 
 window.addEventListener(
     "click",
-    function(e){
+    function(event){
 
         if(
-            e.target ===
+            event.target ===
             document.getElementById(
                 "patientModal"
             )
@@ -4611,8 +5981,9 @@ window.addEventListener(
 
         }
 
+
         if(
-            e.target ===
+            event.target ===
             document.getElementById(
                 "successModal"
             )
@@ -4622,8 +5993,9 @@ window.addEventListener(
 
         }
 
+
         if(
-            e.target ===
+            event.target ===
             document.getElementById(
                 "errorModal"
             )
@@ -4635,6 +6007,20 @@ window.addEventListener(
 
     }
 );
+
+
+/* =====================================================
+   CLOSE PATIENT MODAL
+===================================================== */
+
+function closePatientModal(){
+
+    document.getElementById(
+        "patientModal"
+    ).style.display =
+        "none";
+
+}
 
 
 /* =====================================================
