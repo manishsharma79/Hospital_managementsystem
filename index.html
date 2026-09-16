@@ -4,30 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hospital Management System</title>
+<title>Hospital Management Information System</title>
 
-<!-- Font Awesome Icons -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Segoe UI", Arial, sans-serif;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 
 body{
     background:#eef7fd;
     color:#0b2d4e;
-    min-width:1000px;
+    min-width:1100px;
 }
 
-/* =====================================================
-   MAIN HEADER
-===================================================== */
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* ================= HEADER ================= */
 
 .main-header{
     width:100%;
@@ -35,139 +40,82 @@ body{
     color:white;
 }
 
-/* Hospital heading */
-
 .title-area{
     height:78px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     gap:22px;
-
     border-bottom:1px solid rgba(255,255,255,.2);
 }
 
 .hospital-logo{
     font-size:46px;
-    color:white;
 }
 
 .hospital-title{
-    font-size:36px;
+    font-size:34px;
     font-weight:800;
-    letter-spacing:.2px;
 }
-
-
-/* =====================================================
-   SECOND NAVIGATION BAR
-===================================================== */
 
 .navigation-bar{
     height:70px;
-
     display:flex;
     align-items:center;
-
     padding:0 22px;
-
     background:#0c416a;
-
     box-shadow:0 2px 4px rgba(0,0,0,.15);
 }
 
-
-/* LEFT BUTTONS */
-
 .left-navigation{
     display:flex;
-    gap:18px;
-
+    gap:15px;
     margin-right:auto;
 }
 
 .nav-button{
     height:48px;
-
-    padding:0 22px;
-
+    padding:0 20px;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    gap:12px;
-
+    gap:10px;
     color:white;
-
-    text-decoration:none;
-
-    font-size:18px;
+    font-size:16px;
     font-weight:600;
-
     border:1px solid rgba(255,255,255,.3);
-
     border-radius:9px;
-
     background:rgba(255,255,255,.12);
-
-    transition:.2s;
 }
 
-.nav-button i{
-    font-size:22px;
-}
-
+.nav-button:hover,
 .nav-button.active{
     background:#147bd1;
-
     border-color:#2394ef;
-
-    box-shadow:0 2px 5px rgba(0,0,0,.15);
 }
-
-.nav-button:hover{
-    background:#197ec9;
-}
-
-
-/* =====================================================
-   RIGHT SIDE STAFF
-===================================================== */
 
 .right-info{
     display:flex;
     align-items:center;
-
     height:100%;
 }
 
 .staff-box{
     display:flex;
     align-items:center;
-
     gap:12px;
-
-    padding:0 22px;
+    padding:0 18px;
 }
 
 .staff-circle{
     width:47px;
     height:47px;
-
     border-radius:50%;
-
     background:#1686e2;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:16px;
     font-weight:700;
-
-    box-shadow:0 2px 4px rgba(0,0,0,.2);
 }
 
 .staff-small{
@@ -178,50 +126,34 @@ body{
 .staff-role{
     font-size:15px;
     font-weight:700;
-
-    color:white;
 }
 
 .staff-id{
     font-size:11px;
     color:#b8d1e4;
-    margin-top:2px;
 }
-
-
-/* divider */
 
 .divider{
     width:1px;
     height:43px;
-
     background:rgba(255,255,255,.3);
 }
 
-
-/* DATE */
-
-.date-box{
-    min-width:178px;
-
+.date-box,
+.time-box{
     display:flex;
     align-items:center;
-
-    gap:12px;
-
-    padding:0 22px;
+    gap:10px;
+    padding:0 18px;
 }
 
 .date-icon{
-    font-size:25px;
+    font-size:23px;
 }
 
 .date-text strong{
     display:block;
-
     font-size:13px;
-
-    color:white;
 }
 
 .date-text span{
@@ -229,232 +161,241 @@ body{
     color:#b9d6eb;
 }
 
-
-/* TIME */
-
-.time-box{
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    padding:0 22px;
-
-    white-space:nowrap;
-}
-
 .time-box i{
-    font-size:27px;
+    font-size:25px;
 }
 
 #currentTime{
-    font-size:17px;
+    font-size:16px;
     font-weight:700;
 }
-
-
-/* LOGOUT */
 
 .logout-btn{
-    margin-left:15px;
-
-    height:46px;
-
-    padding:0 20px;
-
+    margin-left:10px;
+    height:44px;
+    padding:0 18px;
     border:none;
-
     border-radius:8px;
-
     background:#e93f59;
-
     color:white;
-
-    font-size:15px;
+    font-size:14px;
     font-weight:700;
-
-    cursor:pointer;
-
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logout-btn i{
-    font-size:20px;
 }
 
 .logout-btn:hover{
     background:#d8324b;
 }
 
-
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
+/* ================= MAIN ================= */
 
 .main-content{
-    padding:20px 35px 35px;
+    padding:20px 35px 40px;
 }
 
-
-/* TITLE */
-
-.registration-heading{
+.page-heading,
+.dashboard-heading{
     display:flex;
     align-items:center;
-
-    gap:15px;
-
+    gap:14px;
     margin-bottom:4px;
 }
 
-.registration-heading i{
+.page-heading i,
+.dashboard-heading i{
     color:#1685dc;
-
-    font-size:33px;
+    font-size:31px;
 }
 
-.registration-heading h1{
+.page-heading h1,
+.dashboard-heading h1{
     font-size:29px;
-
-    font-weight:800;
-
     color:#082e52;
 }
 
-.subtitle{
-    margin-left:48px;
-
-    margin-bottom:16px;
-
+.subtitle,
+.dashboard-subtitle{
+    margin-left:45px;
+    margin-bottom:18px;
     color:#536c85;
-
     font-size:14px;
 }
 
-
-/* =====================================================
-   FORM
-===================================================== */
-
-.registration-form{
-    width:100%;
+.card{
+    background:white;
+    border:1px solid #d3e3ef;
+    border-radius:11px;
+    padding:16px;
+    margin-bottom:15px;
+    box-shadow:0 2px 6px rgba(20,70,110,.07);
 }
 
+/* ================= DASHBOARD ================= */
 
-/* individual section card */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.stat-card{
+    background:white;
+    border:1px solid #d4e3ed;
+    border-radius:11px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.stat-icon{
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e7f3fd;
+    color:#147fd4;
+    font-size:23px;
+}
+
+.stat-card h3{
+    font-size:24px;
+    color:#082e52;
+}
+
+.stat-card p{
+    color:#70869a;
+    font-size:12px;
+}
+
+.dashboard-section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.dashboard-section-title i{
+    color:#147fd4;
+    font-size:21px;
+}
+
+.dashboard-section-title h2{
+    color:#082e52;
+    font-size:20px;
+}
+
+.function-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.function-card{
+    background:white;
+    border:1px solid #d4e3ed;
+    border-radius:10px;
+    padding:18px;
+    min-height:145px;
+    transition:.2s;
+}
+
+.function-card:hover{
+    transform:translateY(-2px);
+    border-color:#147fd4;
+    box-shadow:0 5px 15px rgba(20,100,160,.12);
+}
+
+.function-icon{
+    width:44px;
+    height:44px;
+    background:#e8f4ff;
+    color:#147fd4;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.function-card h3{
+    font-size:15px;
+    color:#082e52;
+    margin-bottom:5px;
+}
+
+.function-card p{
+    color:#718399;
+    font-size:12px;
+    line-height:1.4;
+}
+
+/* ================= FORM ================= */
 
 .form-section{
     background:white;
-
     border:1px solid #d3e3ef;
-
     border-radius:11px;
-
     margin-bottom:8px;
-
     padding:10px;
-
-    box-shadow:
-        0 2px 5px rgba(20,70,110,.06);
+    box-shadow:0 2px 5px rgba(20,70,110,.06);
 }
-
-
-/* SECTION HEADER */
 
 .section-header{
     height:42px;
-
     display:flex;
     align-items:center;
-
     gap:16px;
-
     padding:0 12px;
-
-    background:linear-gradient(
-        90deg,
-        #edf7ff,
-        #f3f9fd
-    );
-
+    background:linear-gradient(90deg,#edf7ff,#f3f9fd);
     border-radius:8px;
-
     margin-bottom:8px;
 }
 
 .section-number{
     width:37px;
     height:37px;
-
-    flex:none;
-
     background:#137fd5;
-
     color:white;
-
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-size:17px;
     font-weight:700;
 }
 
 .section-title{
     font-size:18px;
-
     font-weight:750;
-
     color:#072f55;
 }
 
-
-/* =====================================================
-   FORM GRID
-===================================================== */
-
 .form-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     column-gap:50px;
-
     row-gap:7px;
-
     padding:0 24px 5px;
 }
 
-
-/* FIELD WITH ICON */
-
 .field-row{
     display:grid;
-
     grid-template-columns:31px 1fr;
-
     align-items:end;
 }
 
 .field-icon{
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     padding-bottom:10px;
-
     color:#173f65;
-
     font-size:18px;
 }
-
-
-/* FORM GROUP */
 
 .form-group{
     width:100%;
@@ -462,13 +403,9 @@ body{
 
 .form-group label{
     display:block;
-
     margin-bottom:4px;
-
     font-size:13px;
-
     font-weight:600;
-
     color:#0b3155;
 }
 
@@ -478,1431 +415,2012 @@ body{
 
 .optional{
     font-size:11px;
-
     color:#718399;
-
     font-weight:400;
 }
 
-
-/* INPUT */
-
 .form-control{
     width:100%;
-
     height:35px;
-
     padding:0 13px;
-
     border:1px solid #cbdce8;
-
     border-radius:6px;
-
     outline:none;
-
     font-size:13px;
-
     color:#243e55;
-
     background:white;
-
-    transition:.2s;
-}
-
-.form-control::placeholder{
-    color:#8496aa;
 }
 
 .form-control:focus{
     border-color:#1684d9;
-
     box-shadow:0 0 0 2px rgba(22,132,217,.10);
 }
-
-
-/* AGE */
 
 .age-input{
     background:#e9f1f8;
 }
 
-
-/* FULL WIDTH */
-
 .full-width{
-    grid-column:1 / -1;
+    grid-column:1/-1;
 }
-
-
-/* =====================================================
-   GENDER BOX
-===================================================== */
 
 .gender-options{
     display:grid;
-
     grid-template-columns:1fr 1fr 1fr;
-
     gap:5px;
 }
 
 .gender-option{
     height:35px;
-
     border:1px solid #d3e1ec;
-
     border-radius:6px;
-
     display:flex;
-
     align-items:center;
-
     padding-left:14px;
-
     gap:8px;
-
     font-size:13px;
-
-    cursor:pointer;
-}
-
-.gender-option:hover{
-    background:#f2f8fd;
 }
 
 .gender-option input{
     width:17px;
     height:17px;
-
     accent-color:#147fd6;
 }
 
-
-/* =====================================================
-   ADDRESS / CONTACT ICONS
-===================================================== */
-
-.icon-space{
-    font-size:18px;
-}
-
-
-/* =====================================================
-   REGISTRATION SECTION
-===================================================== */
-
 .patient-tag{
     height:35px;
-
     display:flex;
     align-items:center;
 }
 
 .patient-badge{
-    display:inline-block;
-
     padding:7px 16px;
-
     background:#dff5e9;
-
     color:#17704d;
-
     border:1px solid #bfe5d0;
-
     border-radius:6px;
-
     font-size:13px;
-
     font-weight:600;
 }
 
-
-/* =====================================================
-   BUTTON AREA
-===================================================== */
+/* ================= BUTTONS ================= */
 
 .action-area{
     background:white;
-
     border:1px solid #d2e2ed;
-
     border-radius:10px;
-
     padding:17px 20px;
-
     display:flex;
-
     gap:12px;
 }
 
 .action-button{
     height:42px;
-
     padding:0 22px;
-
     border-radius:7px;
-
     font-size:14px;
-
     font-weight:600;
-
-    cursor:pointer;
-
     display:flex;
-
     align-items:center;
-
     gap:8px;
 }
 
 .register-button{
     background:#147fd4;
-
     color:white;
-
     border:1px solid #147fd4;
-}
-
-.register-button:hover{
-    background:#086bb9;
 }
 
 .reset-button{
     background:white;
-
     color:#314b62;
-
     border:1px solid #cbd9e3;
 }
 
 .cancel-button{
     background:white;
-
     color:#536575;
-
     border:1px solid transparent;
 }
 
+/* ================= PATIENT LIST ================= */
 
-/* =====================================================
-   LAPTOP RESPONSIVE
-===================================================== */
+.patient-list-section{
+    margin-top:25px;
+    background:white;
+    border:1px solid #d3e3ef;
+    border-radius:11px;
+    padding:15px;
+}
+
+.patient-list-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.patient-list-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.patient-list-title i{
+    color:#147fd4;
+    font-size:25px;
+}
+
+.patient-list-title h2{
+    font-size:22px;
+}
+
+.patient-count{
+    background:#e5f2fc;
+    color:#126bb1;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.table-container{
+    overflow-x:auto;
+}
+
+.patient-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:1000px;
+}
+
+.patient-table th{
+    background:#0d4876;
+    color:white;
+    padding:12px 10px;
+    text-align:left;
+    font-size:13px;
+}
+
+.patient-table td{
+    padding:11px 10px;
+    border-bottom:1px solid #e0eaf1;
+    font-size:13px;
+}
+
+.patient-id{
+    color:#147fd4;
+    font-weight:700;
+}
+
+.gender-badge{
+    padding:4px 9px;
+    border-radius:12px;
+    background:#eaf4fd;
+    color:#1769a7;
+    font-size:11px;
+}
+
+.view-btn,
+.delete-btn{
+    border:none;
+    padding:7px 10px;
+    border-radius:5px;
+}
+
+.view-btn{
+    background:#e8f4ff;
+    color:#137fd5;
+}
+
+.delete-btn{
+    background:#ffe9ed;
+    color:#d8324b;
+}
+
+.empty-message{
+    text-align:center;
+    padding:30px;
+    color:#7890a5;
+}
+
+.empty-message i{
+    display:block;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+/* ================= MODULE ================= */
+
+.module-page{
+    background:white;
+    border:1px solid #d3e3ef;
+    border-radius:11px;
+    padding:20px;
+}
+
+.module-page-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.module-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.module-title i{
+    color:#147fd4;
+    font-size:26px;
+}
+
+.module-title h2{
+    color:#082e52;
+}
+
+.back-btn{
+    background:#eaf4fb;
+    color:#126aa8;
+    border:1px solid #cbdfea;
+    padding:9px 15px;
+    border-radius:7px;
+}
+
+.module-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.module-box{
+    border:1px solid #d7e4ed;
+    border-radius:9px;
+    padding:16px;
+    background:#fafdff;
+}
+
+.module-box h3{
+    color:#0d4876;
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.module-box p{
+    color:#62798c;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.module-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.module-form .full{
+    grid-column:1/-1;
+}
+
+.module-input{
+    width:100%;
+    height:38px;
+    border:1px solid #cbdce8;
+    border-radius:6px;
+    padding:0 12px;
+    outline:none;
+}
+
+.module-action{
+    margin-top:15px;
+    background:#147fd4;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:7px;
+    font-weight:600;
+}
+
+/* ================= MODALS ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    inset:0;
+    background:rgba(5,30,50,.55);
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-content{
+    background:white;
+    border-radius:13px;
+    box-shadow:0 15px 45px rgba(0,0,0,.3);
+}
+
+.success-modal,
+.error-modal{
+    width:450px;
+    text-align:center;
+    padding:30px;
+}
+
+.success-icon,
+.error-icon{
+    width:75px;
+    height:75px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.success-icon{
+    background:#dff5e9;
+    color:#15945e;
+}
+
+.error-icon{
+    background:#fff0f2;
+    color:#df3c55;
+}
+
+.success-modal h2,
+.error-modal h2{
+    color:#123d59;
+    margin-bottom:8px;
+}
+
+.success-modal p,
+#errorMessage{
+    color:#718399;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.patient-id-box{
+    margin:18px 0;
+    background:#eef7fd;
+    border:1px solid #c9e0ef;
+    border-radius:9px;
+    padding:13px;
+}
+
+.patient-id-box small{
+    color:#718399;
+    display:block;
+}
+
+.patient-id-box strong{
+    color:#147fd4;
+    font-size:22px;
+}
+
+.success-ok,
+.error-ok{
+    width:100%;
+    height:42px;
+    border:none;
+    border-radius:7px;
+    background:#147fd4;
+    color:white;
+    font-weight:700;
+}
+
+.modal-header{
+    background:#0d4876;
+    color:white;
+    padding:16px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:13px 13px 0 0;
+}
+
+.close-modal{
+    background:none;
+    border:none;
+    color:white;
+    font-size:25px;
+}
+
+.modal-body{
+    padding:20px;
+    max-height:75vh;
+    overflow-y:auto;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.detail-item{
+    background:#f7fbfe;
+    border:1px solid #dbe8ef;
+    border-radius:7px;
+    padding:10px;
+}
+
+.detail-item strong{
+    display:block;
+    color:#0d4876;
+    font-size:11px;
+    margin-bottom:4px;
+}
+
+.detail-item span{
+    font-size:13px;
+    color:#29465e;
+}
+
+.toast{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:6000;
+    background:#123f5d;
+    color:white;
+    padding:13px 18px;
+    border-radius:8px;
+    display:none;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:1300px){
 
     .hospital-title{
-        font-size:31px;
-    }
-
-    .nav-button{
-        font-size:15px;
-
-        padding:0 16px;
+        font-size:28px;
     }
 
     .right-info{
-        transform:scale(.92);
-
+        transform:scale(.88);
         transform-origin:right center;
+    }
+
+    .function-grid{
+        grid-template-columns:repeat(3,1fr);
     }
 
     .form-grid{
         column-gap:30px;
     }
-
 }
-
-
-/* =====================================================
-   PRINT
-===================================================== */
-
-@media print{
-
-    .navigation-bar{
-        display:none;
-    }
-
-    .main-content{
-        padding:10px;
-    }
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ======================================================
- HEADER
-====================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header class="main-header">
 
-    <div class="title-area">
+<div class="title-area">
 
-        <i class="fa-solid fa-hospital hospital-logo"></i>
+<i class="fa-solid fa-hospital hospital-logo"></i>
 
-        <div class="hospital-title">
-            Hospital Management Information System
-        </div>
+<div class="hospital-title">
+Hospital Management Information System
+</div>
 
-    </div>
+</div>
 
+<div class="navigation-bar">
 
-    <div class="navigation-bar">
+<div class="left-navigation">
 
+<button class="nav-button active"
+id="homeNav"
+onclick="showHome()">
+<i class="fa-solid fa-house"></i>
+Home
+</button>
 
-        <!-- LEFT -->
+<button class="nav-button"
+id="dashboardNav"
+onclick="showDashboard()">
+<i class="fa-solid fa-table-cells-large"></i>
+Dashboard
+</button>
 
-        <div class="left-navigation">
+<button class="nav-button"
+onclick="showRegistration()">
+<i class="fa-solid fa-user-plus"></i>
+Registration
+</button>
 
-            <a href="#" class="nav-button active">
+</div>
 
-                <i class="fa-solid fa-house"></i>
+<div class="right-info">
 
-                Home
+<div class="staff-box">
 
-            </a>
+<div class="staff-circle">RS</div>
 
+<div>
+<div class="staff-small">Logged in as</div>
+<div class="staff-role">Registration Staff</div>
+<div class="staff-id">Staff ID: RS-001</div>
+</div>
 
-            <a href="#" class="nav-button">
+</div>
 
-                <i class="fa-solid fa-table-cells-large"></i>
+<div class="divider"></div>
 
-                Dashboard
+<div class="date-box">
 
-            </a>
+<i class="fa-regular fa-calendar-days date-icon"></i>
 
-        </div>
+<div class="date-text">
+<strong id="currentDate"></strong>
+<span id="currentDay"></span>
+</div>
 
+</div>
 
+<div class="divider"></div>
 
-        <!-- RIGHT -->
+<div class="time-box">
 
-        <div class="right-info">
+<i class="fa-regular fa-clock"></i>
+<div id="currentTime"></div>
 
+</div>
 
-            <div class="staff-box">
+<button class="logout-btn" onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
 
-                <div class="staff-circle">
-                    RS
-                </div>
-
-
-                <div>
-
-                    <div class="staff-small">
-                        Logged in as
-                    </div>
-
-                    <div class="staff-role">
-                        Registration Staff
-                    </div>
-
-                    <div class="staff-id">
-                        Staff ID: RS-001
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="divider"></div>
-
-
-            <!-- DATE -->
-
-            <div class="date-box">
-
-                <i class="fa-regular fa-calendar-days date-icon"></i>
-
-                <div class="date-text">
-
-                    <strong id="currentDate">
-                        Tue, 15 Sep 2026
-                    </strong>
-
-                    <span id="currentDay">
-                        Tuesday
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="divider"></div>
-
-
-            <!-- TIME -->
-
-            <div class="time-box">
-
-                <i class="fa-regular fa-clock"></i>
-
-                <div id="currentTime">
-                    12:12:39 PM
-                </div>
-
-            </div>
-
-
-            <!-- LOGOUT -->
-
-            <button class="logout-btn">
-
-                <i class="fa-solid fa-right-from-bracket"></i>
-
-                Logout
-
-            </button>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </header>
 
 
-
-<!-- ======================================================
- CONTENT
-====================================================== -->
-
 <main class="main-content">
 
+<!-- ================= HOME ================= -->
 
-    <div class="registration-heading">
+<div id="homePage">
 
-        <i class="fa-solid fa-user-group"></i>
+<div class="page-heading">
 
-        <h1>
-            New Patient Registration
-        </h1>
+<i class="fa-solid fa-hospital-user"></i>
 
-    </div>
+<h1>Hospital Management System</h1>
 
+</div>
 
-    <div class="subtitle">
-        Enter patient details to register a new patient in the system
-    </div>
+<div class="subtitle">
+Registration Staff Portal
+</div>
 
+<div class="card">
 
+<div class="dashboard-section-title">
 
-    <form id="registrationForm" class="registration-form">
+<i class="fa-solid fa-circle-info"></i>
 
+<h2>Welcome</h2>
 
+</div>
 
-        <!-- ==================================================
-         1 PATIENT INFORMATION
-        =================================================== -->
+<p style="color:#61798d;line-height:1.7;font-size:14px;">
 
-        <section class="form-section">
+Welcome to the Hospital Management Information System.
+Use Dashboard to access hospital functions or Registration
+to register a new patient.
 
+</p>
 
-            <div class="section-header">
+</div>
 
-                <div class="section-number">
-                    1
-                </div>
+</div>
 
-                <div class="section-title">
-                    Patient Information
-                </div>
 
-            </div>
+<!-- ================= DASHBOARD ================= -->
 
+<div id="dashboardPage" class="hidden">
 
-            <div class="form-grid">
+<div class="dashboard-heading">
 
+<i class="fa-solid fa-chart-line"></i>
 
-                <!-- NAME -->
+<h1>Dashboard</h1>
 
-                <div class="field-row">
+</div>
 
-                    <div class="field-icon">
+<div class="dashboard-subtitle">
 
-                        <i class="fa-solid fa-user"></i>
+Hospital Management System – Registration Staff Dashboard
 
-                    </div>
+</div>
 
-                    <div class="form-group">
 
-                        <label>
-                            Full Name
-                            <span class="required">*</span>
-                        </label>
+<div class="stats-grid">
 
-                        <input
-                            class="form-control"
-                            type="text"
-                            placeholder="Enter patient's full name"
-                            required
-                        >
+<div class="stat-card">
 
-                    </div>
+<div class="stat-icon">
+<i class="fa-solid fa-users"></i>
+</div>
 
-                </div>
+<div>
+<h3 id="totalPatients">0</h3>
+<p>Total Patients</p>
+</div>
 
+</div>
 
-                <!-- DOB -->
 
-                <div class="field-row">
+<div class="stat-card">
 
-                    <div class="field-icon">
+<div class="stat-icon">
+<i class="fa-solid fa-user-plus"></i>
+</div>
 
-                        <i class="fa-regular fa-calendar-days"></i>
+<div>
+<h3 id="newPatients">0</h3>
+<p>Registered Patients</p>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="form-group">
 
-                        <label>
-                            Date of Birth
-                            <span class="required">*</span>
-                        </label>
+<div class="stat-card">
 
-                        <input
-                            id="dob"
-                            class="form-control"
-                            type="date"
-                            required
-                        >
+<div class="stat-icon">
+<i class="fa-solid fa-user-doctor"></i>
+</div>
 
-                    </div>
+<div>
+<h3 id="totalDoctors">0</h3>
+<p>Registered Doctors</p>
+</div>
 
-                </div>
+</div>
 
 
+<div class="stat-card">
 
-                <!-- AGE -->
+<div class="stat-icon">
+<i class="fa-solid fa-calendar-check"></i>
+</div>
 
-                <div class="field-row">
+<div>
+<h3 id="totalAppointments">0</h3>
+<p>Appointments</p>
+</div>
 
-                    <div class="field-icon">
+</div>
 
-                        <i class="fa-solid fa-user-clock"></i>
+</div>
 
-                    </div>
 
-                    <div class="form-group">
+<div class="card">
 
-                        <label>
-                            Age
-                        </label>
+<div class="dashboard-section-title">
 
-                        <input
-                            id="age"
-                            class="form-control age-input"
-                            type="text"
-                            placeholder="Auto-calculated"
-                            readonly
-                        >
+<i class="fa-solid fa-list-check"></i>
 
-                    </div>
+<h2>Broad Functions</h2>
 
-                </div>
+</div>
 
+<div class="function-grid">
 
 
-                <!-- GENDER -->
+<div class="function-card"
+onclick="openFunction('login')">
 
-                <div class="field-row">
+<div class="function-icon">
+<i class="fa-solid fa-right-to-bracket"></i>
+</div>
 
-                    <div class="field-icon"></div>
+<h3>Login</h3>
 
-                    <div class="form-group">
+<p>
+Staff login and authentication information.
+</p>
 
-                        <label>
+</div>
 
-                            Gender
-                            <span class="required">*</span>
 
-                        </label>
+<div class="function-card"
+onclick="showRegistration()">
 
+<div class="function-icon">
+<i class="fa-solid fa-user-plus"></i>
+</div>
 
-                        <div class="gender-options">
+<h3>New Patient Registration</h3>
 
-                            <label class="gender-option">
+<p>
+Register a new patient with complete details.
+</p>
 
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="Male"
-                                    required
-                                >
+</div>
 
-                                Male
 
-                            </label>
+<div class="function-card"
+onclick="openFunction('update')">
 
+<div class="function-icon">
+<i class="fa-solid fa-user-pen"></i>
+</div>
 
-                            <label class="gender-option">
+<h3>Update Patient Details</h3>
 
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="Female"
-                                >
+<p>
+Search and update registered patient information.
+</p>
 
-                                Female
+</div>
 
-                            </label>
 
+<div class="function-card"
+onclick="openFunction('unique')">
 
-                            <label class="gender-option">
+<div class="function-icon">
+<i class="fa-solid fa-id-card"></i>
+</div>
 
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="Other"
-                                >
+<h3>Generate Unique Patient ID</h3>
 
-                                Other
+<p>
+Generate a unique identification number.
+</p>
 
-                            </label>
+</div>
 
-                        </div>
 
-                    </div>
+<div class="function-card"
+onclick="openFunction('doctor')">
 
-                </div>
+<div class="function-icon">
+<i class="fa-solid fa-user-doctor"></i>
+</div>
 
+<h3>Assign / Register Doctor</h3>
 
+<p>
+Register doctor and assign department.
+</p>
 
-                <!-- BLOOD -->
+</div>
 
-                <div class="field-row">
 
-                    <div class="field-icon">
+<div class="function-card"
+onclick="openFunction('availability')">
 
-                        <i class="fa-solid fa-droplet"></i>
+<div class="function-icon">
+<i class="fa-solid fa-calendar-days"></i>
+</div>
 
-                    </div>
+<h3>Check Doctor Availability</h3>
 
-                    <div class="form-group">
+<p>
+Check registered doctor availability.
+</p>
 
-                        <label>
+</div>
 
-                            Blood Group
 
-                            <span class="optional">
-                                (optional)
-                            </span>
+<div class="function-card"
+onclick="openFunction('history')">
 
-                        </label>
+<div class="function-icon">
+<i class="fa-solid fa-clock-rotate-left"></i>
+</div>
 
+<h3>Patient Visit History</h3>
 
-                        <select class="form-control">
+<p>
+View patient visit and appointment history.
+</p>
 
-                            <option>
-                                Unknown / Not sure
-                            </option>
+</div>
 
-                            <option>A+</option>
-                            <option>A-</option>
-                            <option>B+</option>
-                            <option>B-</option>
-                            <option>AB+</option>
-                            <option>AB-</option>
-                            <option>O+</option>
-                            <option>O-</option>
 
-                        </select>
+<div class="function-card"
+onclick="openFunction('appointment')">
 
-                    </div>
+<div class="function-icon">
+<i class="fa-solid fa-calendar-plus"></i>
+</div>
 
-                </div>
+<h3>Create / Cancel Appointment</h3>
 
+<p>
+Create or cancel patient appointments.
+</p>
 
+</div>
 
-                <!-- MARITAL -->
+</div>
+</div>
 
-                <div class="field-row">
 
-                    <div class="field-icon">
+<div class="card">
 
-                        <i class="fa-solid fa-user-group"></i>
+<div class="dashboard-section-title">
 
-                    </div>
+<i class="fa-solid fa-users"></i>
 
-                    <div class="form-group">
+<h2>Recent Patients</h2>
 
-                        <label>
+</div>
 
-                            Marital Status
+<div class="table-container">
 
-                            <span class="optional">
-                                (optional)
-                            </span>
+<table class="patient-table">
 
-                        </label>
+<thead>
 
+<tr>
+<th>Patient ID</th>
+<th>Name</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Mobile</th>
+<th>Registration Date</th>
+</tr>
 
-                        <select class="form-control">
+</thead>
 
-                            <option value="">
-                                Select
-                            </option>
+<tbody id="dashboardPatientBody"></tbody>
 
-                            <option>Single</option>
-                            <option>Married</option>
-                            <option>Divorced</option>
-                            <option>Widowed</option>
+</table>
 
-                        </select>
+</div>
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
 
-            </div>
+<!-- ================= REGISTRATION ================= -->
 
-        </section>
+<div id="registrationPage" class="hidden">
 
+<div class="page-heading">
 
+<i class="fa-solid fa-user-group"></i>
 
-        <!-- ==================================================
-         2 CONTACT
-        =================================================== -->
+<h1>New Patient Registration</h1>
 
-        <section class="form-section">
+</div>
 
+<div class="subtitle">
+Enter patient details to register a new patient in the system
+</div>
 
-            <div class="section-header">
 
-                <div class="section-number">
-                    2
-                </div>
+<form id="registrationForm" novalidate>
 
-                <div class="section-title">
-                    Contact Information
-                </div>
 
-            </div>
+<!-- 1 PATIENT -->
 
+<section class="form-section">
 
-            <div class="form-grid">
+<div class="section-header">
 
+<div class="section-number">1</div>
 
-                <!-- MOBILE -->
+<div class="section-title">
+Patient Information
+</div>
 
-                <div class="field-row">
+</div>
 
-                    <div class="field-icon">
 
-                        <i class="fa-solid fa-phone"></i>
+<div class="form-grid">
 
-                    </div>
 
-                    <div class="form-group">
+<div class="field-row">
 
-                        <label>
+<div class="field-icon">
+<i class="fa-solid fa-user"></i>
+</div>
 
-                            Mobile Number
-                            <span class="required">*</span>
+<div class="form-group">
 
-                        </label>
+<label>
+Full Name <span class="required">*</span>
+</label>
 
+<input
+id="fullName"
+class="form-control"
+type="text"
+placeholder="Enter patient's full name">
 
-                        <input
-                            class="form-control"
-                            type="tel"
-                            maxlength="10"
-                            pattern="[0-9]{10}"
-                            placeholder="10-digit mobile number"
-                            required
-                        >
+</div>
+</div>
 
-                    </div>
 
-                </div>
+<div class="field-row">
 
+<div class="field-icon">
+<i class="fa-regular fa-calendar-days"></i>
+</div>
 
+<div class="form-group">
 
-                <!-- ALTERNATE -->
+<label>
+Date of Birth <span class="required">*</span>
+</label>
 
-                <div class="field-row">
+<input
+id="dob"
+class="form-control"
+type="date">
 
-                    <div class="field-icon">
+</div>
+</div>
 
-                        <i class="fa-solid fa-phone"></i>
 
-                    </div>
+<div class="field-row">
 
-                    <div class="form-group">
+<div class="field-icon">
+<i class="fa-solid fa-user-clock"></i>
+</div>
 
-                        <label>
+<div class="form-group">
 
-                            Alternate Phone Number
+<label>Age</label>
 
-                            <span class="optional">
-                                (optional)
-                            </span>
+<input
+id="age"
+class="form-control age-input"
+type="text"
+placeholder="Auto-calculated"
+readonly>
 
-                        </label>
+</div>
+</div>
 
 
-                        <input
-                            class="form-control"
-                            type="tel"
-                            maxlength="10"
-                            placeholder="10-digit number"
-                        >
+<div class="field-row">
 
-                    </div>
+<div class="field-icon"></div>
 
-                </div>
+<div class="form-group">
 
+<label>
+Gender <span class="required">*</span>
+</label>
 
+<div class="gender-options">
 
-                <!-- EMAIL -->
+<label class="gender-option">
+<input type="radio"
+name="gender"
+value="Male">
+Male
+</label>
 
-                <div class="field-row full-width">
+<label class="gender-option">
+<input type="radio"
+name="gender"
+value="Female">
+Female
+</label>
 
-                    <div class="field-icon">
+<label class="gender-option">
+<input type="radio"
+name="gender"
+value="Other">
+Other
+</label>
 
-                        <i class="fa-solid fa-envelope"></i>
+</div>
 
-                    </div>
+</div>
+</div>
 
-                    <div class="form-group">
 
-                        <label>
+<div class="field-row">
 
-                            Email Address
+<div class="field-icon">
+<i class="fa-solid fa-droplet"></i>
+</div>
 
-                            <span class="optional">
-                                (optional)
-                            </span>
+<div class="form-group">
 
-                        </label>
+<label>
+Blood Group
+<span class="optional">(optional)</span>
+</label>
 
+<select id="bloodGroup" class="form-control">
 
-                        <input
-                            class="form-control"
-                            type="email"
-                            placeholder="name@example.com"
-                        >
+<option>Unknown / Not sure</option>
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
 
-                    </div>
+</select>
 
-                </div>
+</div>
+</div>
 
 
-            </div>
+<div class="field-row">
 
-        </section>
+<div class="field-icon">
+<i class="fa-solid fa-user-group"></i>
+</div>
 
+<div class="form-group">
 
+<label>
+Marital Status
+<span class="optional">(optional)</span>
+</label>
 
-        <!-- ==================================================
-         3 ADDRESS
-        =================================================== -->
+<select id="maritalStatus"
+class="form-control">
 
-        <section class="form-section">
+<option value="">Select</option>
+<option>Single</option>
+<option>Married</option>
+<option>Divorced</option>
+<option>Widowed</option>
 
+</select>
 
-            <div class="section-header">
+</div>
+</div>
 
-                <div class="section-number">
-                    3
-                </div>
+</div>
+</section>
 
-                <div class="section-title">
-                    Address Information
-                </div>
 
-            </div>
+<!-- 2 CONTACT -->
 
+<section class="form-section">
 
-            <div class="form-grid">
+<div class="section-header">
 
+<div class="section-number">2</div>
 
-                <!-- HOUSE -->
+<div class="section-title">
+Contact Information
+</div>
 
-                <div class="field-row">
+</div>
 
-                    <div class="field-icon">
+<div class="form-grid">
 
-                        <i class="fa-solid fa-house"></i>
 
-                    </div>
+<div class="field-row">
 
-                    <div class="form-group">
+<div class="field-icon">
+<i class="fa-solid fa-phone"></i>
+</div>
 
-                        <label>
+<div class="form-group">
 
-                            House / Flat No.
-                            <span class="required">*</span>
+<label>
+Mobile Number <span class="required">*</span>
+</label>
 
-                        </label>
+<input
+id="mobile"
+class="form-control"
+type="text"
+maxlength="10"
+placeholder="10-digit mobile number">
 
+</div>
+</div>
 
-                        <input
-                            class="form-control"
-                            type="text"
-                            placeholder="e.g. 12B"
-                            required
-                        >
 
-                    </div>
+<div class="field-row">
 
-                </div>
+<div class="field-icon">
+<i class="fa-solid fa-phone"></i>
+</div>
 
+<div class="form-group">
 
+<label>
+Alternate Phone Number
+<span class="optional">(optional)</span>
+</label>
 
-                <!-- STREET -->
+<input
+id="alternatePhone"
+class="form-control"
+type="text"
+maxlength="10"
+placeholder="10-digit number">
 
-                <div class="field-row">
+</div>
+</div>
 
-                    <div class="field-icon">
 
-                        <i class="fa-solid fa-location-dot"></i>
+<div class="field-row full-width">
 
-                    </div>
+<div class="field-icon">
+<i class="fa-solid fa-envelope"></i>
+</div>
 
-                    <div class="form-group">
+<div class="form-group">
 
-                        <label>
+<label>
+Email Address
+<span class="optional">(optional)</span>
+</label>
 
-                            Street / Locality
-                            <span class="required">*</span>
+<input
+id="email"
+class="form-control"
+type="text"
+placeholder="name@example.com">
 
-                        </label>
+</div>
+</div>
 
+</div>
+</section>
 
-                        <input
-                            class="form-control"
-                            type="text"
-                            placeholder="e.g. MG Road"
-                            required
-                        >
 
-                    </div>
+<!-- 3 ADDRESS -->
 
-                </div>
+<section class="form-section">
 
+<div class="section-header">
 
+<div class="section-number">3</div>
 
-                <!-- CITY -->
+<div class="section-title">
+Address Information
+</div>
 
-                <div class="field-row">
+</div>
 
-                    <div class="field-icon">
+<div class="form-grid">
 
-                        <i class="fa-solid fa-city"></i>
 
-                    </div>
+<div class="field-row">
 
-                    <div class="form-group">
+<div class="field-icon">
+<i class="fa-solid fa-house"></i>
+</div>
 
-                        <label>
+<div class="form-group">
 
-                            City
-                            <span class="required">*</span>
+<label>
+House / Flat No.
+<span class="required">*</span>
+</label>
 
-                        </label>
+<input
+id="house"
+class="form-control"
+type="text"
+placeholder="e.g. 12B">
 
+</div>
+</div>
 
-                        <input
-                            class="form-control"
-                            type="text"
-                            placeholder="e.g. Kolkata"
-                            required
-                        >
 
-                    </div>
+<div class="field-row">
 
-                </div>
+<div class="field-icon">
+<i class="fa-solid fa-location-dot"></i>
+</div>
 
+<div class="form-group">
 
+<label>
+Street / Locality
+<span class="required">*</span>
+</label>
 
-                <!-- STATE -->
+<input
+id="street"
+class="form-control"
+type="text"
+placeholder="e.g. MG Road">
 
-                <div class="field-row">
+</div>
+</div>
 
-                    <div class="field-icon">
 
-                        <i class="fa-solid fa-building"></i>
+<div class="field-row">
 
-                    </div>
+<div class="field-icon">
+<i class="fa-solid fa-city"></i>
+</div>
 
-                    <div class="form-group">
+<div class="form-group">
 
-                        <label>
+<label>
+City <span class="required">*</span>
+</label>
 
-                            State
-                            <span class="required">*</span>
+<input
+id="city"
+class="form-control"
+type="text"
+placeholder="e.g. Kolkata">
 
-                        </label>
+</div>
+</div>
 
 
-                        <input
-                            class="form-control"
-                            type="text"
-                            placeholder="e.g. West Bengal"
-                            required
-                        >
+<div class="field-row">
 
-                    </div>
+<div class="field-icon">
+<i class="fa-solid fa-building"></i>
+</div>
 
-                </div>
+<div class="form-group">
 
+<label>
+State / Union Territory
+<span class="required">*</span>
+</label>
 
+<select
+id="state"
+class="form-control">
 
-                <!-- PIN -->
+<option value="">
+Select State / Union Territory
+</option>
 
-                <div class="field-row">
+</select>
 
-                    <div class="field-icon">
+</div>
+</div>
 
-                        <i class="fa-solid fa-envelope"></i>
 
-                    </div>
+<div class="field-row">
 
-                    <div class="form-group">
+<div class="field-icon">
+<i class="fa-solid fa-globe"></i>
+</div>
 
-                        <label>
+<div class="form-group">
 
-                            PIN Code
-                            <span class="required">*</span>
+<label>
+Country <span class="required">*</span>
+</label>
 
-                        </label>
+<select
+id="country"
+class="form-control">
 
+<option value="">
+Select Country
+</option>
 
-                        <input
-                            class="form-control"
-                            type="text"
-                            maxlength="6"
-                            pattern="[0-9]{6}"
-                            placeholder="6-digit PIN code"
-                            required
-                        >
+</select>
 
-                    </div>
+</div>
+</div>
 
-                </div>
 
+<div class="field-row">
 
-            </div>
+<div class="field-icon">
+<i class="fa-solid fa-envelope"></i>
+</div>
 
-        </section>
+<div class="form-group">
 
+<label>
+PIN Code <span class="required">*</span>
+</label>
 
+<input
+id="pin"
+class="form-control"
+type="text"
+maxlength="6"
+placeholder="6-digit PIN code">
 
-        <!-- ==================================================
-         4 EMERGENCY CONTACT
-        =================================================== -->
+</div>
+</div>
 
-        <section class="form-section">
+</div>
+</section>
 
 
-            <div class="section-header">
+<!-- 4 EMERGENCY -->
 
-                <div class="section-number">
-                    4
-                </div>
+<section class="form-section">
 
-                <div class="section-title">
-                    Emergency Contact
-                </div>
+<div class="section-header">
 
-            </div>
+<div class="section-number">4</div>
 
+<div class="section-title">
+Emergency Contact
+</div>
 
-            <div class="form-grid">
+</div>
 
+<div class="form-grid">
 
-                <div class="field-row">
 
-                    <div class="field-icon">
+<div class="field-row">
 
-                        <i class="fa-solid fa-user-shield"></i>
+<div class="field-icon">
+<i class="fa-solid fa-user-shield"></i>
+</div>
 
-                    </div>
+<div class="form-group">
 
-                    <div class="form-group">
+<label>
+Emergency Contact Name
+<span class="required">*</span>
+</label>
 
-                        <label>
-                            Emergency Contact Name
-                            <span class="required">*</span>
-                        </label>
+<input
+id="emergencyName"
+class="form-control"
+type="text"
+placeholder="Full name">
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Full name"
-                            required
-                        >
+</div>
+</div>
 
-                    </div>
 
-                </div>
+<div class="field-row">
 
+<div class="field-icon">
+<i class="fa-solid fa-people-roof"></i>
+</div>
 
+<div class="form-group">
 
-                <div class="field-row">
+<label>
+Relationship with Patient
+<span class="required">*</span>
+</label>
 
-                    <div class="field-icon">
+<select
+id="relationship"
+class="form-control">
 
-                        <i class="fa-solid fa-people-roof"></i>
+<option value="">
+Select relationship
+</option>
 
-                    </div>
+<option>Father</option>
+<option>Mother</option>
+<option>Brother</option>
+<option>Sister</option>
+<option>Spouse</option>
+<option>Son</option>
+<option>Daughter</option>
+<option>Guardian</option>
+<option>Other</option>
 
-                    <div class="form-group">
+</select>
 
-                        <label>
+</div>
+</div>
 
-                            Relationship with Patient
-                            <span class="required">*</span>
 
-                        </label>
+<div class="field-row">
 
+<div class="field-icon">
+<i class="fa-solid fa-phone"></i>
+</div>
 
-                        <select class="form-control" required>
+<div class="form-group">
 
-                            <option value="">
-                                Select relationship
-                            </option>
+<label>
+Emergency Contact Number
+<span class="required">*</span>
+</label>
 
-                            <option>Father</option>
-                            <option>Mother</option>
-                            <option>Brother</option>
-                            <option>Sister</option>
-                            <option>Spouse</option>
-                            <option>Son</option>
-                            <option>Daughter</option>
-                            <option>Guardian</option>
-                            <option>Other</option>
+<input
+id="emergencyPhone"
+class="form-control"
+type="text"
+maxlength="10"
+placeholder="10-digit mobile number">
 
-                        </select>
+</div>
+</div>
 
-                    </div>
+</div>
+</section>
 
-                </div>
 
+<!-- 5 ID -->
 
+<section class="form-section">
 
-                <div class="field-row">
+<div class="section-header">
 
-                    <div class="field-icon">
+<div class="section-number">5</div>
 
-                        <i class="fa-solid fa-phone"></i>
+<div class="section-title">
+Identification Information
+</div>
 
-                    </div>
+</div>
 
-                    <div class="form-group">
+<div class="form-grid">
 
-                        <label>
 
-                            Emergency Contact Number
-                            <span class="required">*</span>
+<div class="field-row">
 
-                        </label>
+<div class="field-icon">
+<i class="fa-solid fa-id-card"></i>
+</div>
 
+<div class="form-group">
 
-                        <input
-                            type="tel"
-                            class="form-control"
-                            maxlength="10"
-                            pattern="[0-9]{10}"
-                            placeholder="10-digit mobile number"
-                            required
-                        >
+<label>
+ID Proof Type <span class="required">*</span>
+</label>
 
-                    </div>
+<select
+id="idType"
+class="form-control">
 
-                </div>
+<option value="">
+Select ID type
+</option>
 
+<option>Aadhaar Card</option>
+<option>Voter ID</option>
+<option>Driving Licence</option>
+<option>Passport</option>
+<option>PAN Card</option>
+<option>Other</option>
 
-            </div>
+</select>
 
-        </section>
+</div>
+</div>
 
 
+<div class="field-row">
 
-        <!-- ==================================================
-         5 IDENTIFICATION
-        =================================================== -->
+<div class="field-icon">
+<i class="fa-solid fa-hashtag"></i>
+</div>
 
-        <section class="form-section">
+<div class="form-group">
 
+<label>
+ID Proof Number <span class="required">*</span>
+</label>
 
-            <div class="section-header">
+<input
+id="idNumber"
+class="form-control"
+type="text"
+placeholder="Enter ID number">
 
-                <div class="section-number">
-                    5
-                </div>
+</div>
+</div>
 
-                <div class="section-title">
-                    Identification Information
-                </div>
+</div>
+</section>
 
-            </div>
 
+<!-- 6 REGISTRATION -->
 
-            <div class="form-grid">
+<section class="form-section">
 
+<div class="section-header">
 
-                <div class="field-row">
+<div class="section-number">6</div>
 
-                    <div class="field-icon">
+<div class="section-title">
+Registration Information
+</div>
 
-                        <i class="fa-solid fa-id-card"></i>
+</div>
 
-                    </div>
+<div class="form-grid">
 
-                    <div class="form-group">
 
-                        <label>
+<div class="field-row">
 
-                            ID Proof Type
-                            <span class="required">*</span>
+<div class="field-icon">
+<i class="fa-regular fa-calendar-check"></i>
+</div>
 
-                        </label>
+<div class="form-group">
 
+<label>Registration Date</label>
 
-                        <select class="form-control" required>
+<input
+id="registrationDate"
+class="form-control age-input"
+readonly>
 
-                            <option value="">
-                                Select ID type
-                            </option>
+</div>
+</div>
 
-                            <option>Aadhaar Card</option>
-                            <option>Voter ID</option>
-                            <option>Driving Licence</option>
-                            <option>Passport</option>
-                            <option>PAN Card</option>
-                            <option>Other</option>
 
-                        </select>
+<div class="field-row">
 
-                    </div>
+<div class="field-icon">
+<i class="fa-solid fa-user-plus"></i>
+</div>
 
-                </div>
+<div class="form-group">
 
+<label>Registration Type</label>
 
+<div class="patient-tag">
 
-                <div class="field-row">
+<span class="patient-badge">
+New Patient
+</span>
 
-                    <div class="field-icon">
+</div>
 
-                        <i class="fa-solid fa-hashtag"></i>
+</div>
+</div>
 
-                    </div>
+</div>
+</section>
 
-                    <div class="form-group">
 
-                        <label>
+<div class="action-area">
 
-                            ID Proof Number
-                            <span class="required">*</span>
+<button
+class="action-button register-button"
+type="submit">
 
-                        </label>
+<i class="fa-solid fa-user-plus"></i>
 
+Register Patient
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Enter ID number"
-                            required
-                        >
+</button>
 
-                    </div>
 
-                </div>
+<button
+class="action-button reset-button"
+type="reset">
 
+<i class="fa-solid fa-rotate-left"></i>
 
-            </div>
+Reset / Clear
 
-        </section>
+</button>
 
 
+<button
+class="action-button cancel-button"
+type="button"
+onclick="showHome()">
 
-        <!-- ==================================================
-         6 REGISTRATION
-        =================================================== -->
+Cancel
 
-        <section class="form-section">
+</button>
 
+</div>
 
-            <div class="section-header">
+</form>
 
-                <div class="section-number">
-                    6
-                </div>
 
-                <div class="section-title">
-                    Registration Information
-                </div>
+<!-- PATIENT LIST -->
 
-            </div>
+<section class="patient-list-section">
 
+<div class="patient-list-header">
 
-            <div class="form-grid">
+<div class="patient-list-title">
 
+<i class="fa-solid fa-users"></i>
 
-                <div class="field-row">
+<h2>Registered Patient List</h2>
 
-                    <div class="field-icon">
+</div>
 
-                        <i class="fa-regular fa-calendar-check"></i>
+<div class="patient-count">
 
-                    </div>
+Total Patients:
+<span id="patientCount">0</span>
 
-                    <div class="form-group">
+</div>
 
-                        <label>
-                            Registration Date
-                        </label>
+</div>
 
-                        <input
-                            id="registrationDate"
-                            type="text"
-                            class="form-control age-input"
-                            readonly
-                        >
 
-                    </div>
+<div class="table-container">
 
-                </div>
+<table class="patient-table">
 
+<thead>
 
+<tr>
 
-                <div class="field-row">
+<th>Patient ID</th>
+<th>Name</th>
+<th>DOB</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Blood Group</th>
+<th>Mobile</th>
+<th>Country</th>
+<th>State</th>
+<th>Action</th>
 
-                    <div class="field-icon">
+</tr>
 
-                        <i class="fa-solid fa-user-plus"></i>
+</thead>
 
-                    </div>
+<tbody id="patientTableBody"></tbody>
 
-                    <div class="form-group">
+</table>
 
-                        <label>
-                            Registration Type
-                        </label>
+</div>
 
-                        <div class="patient-tag">
 
-                            <span class="patient-badge">
-                                New Patient
-                            </span>
+<div id="emptyMessage"
+class="empty-message">
 
-                        </div>
+<i class="fa-solid fa-user-slash"></i>
 
-                    </div>
+No patients registered yet.
 
-                </div>
+</div>
 
+</section>
 
-            </div>
+</div>
 
-        </section>
 
+<!-- ================= MODULE PAGE ================= -->
 
+<div id="modulePage" class="hidden">
 
-        <!-- ==================================================
-         BUTTONS
-        =================================================== -->
+<div class="module-page">
 
-        <div class="action-area">
+<div class="module-page-header">
 
+<div class="module-title">
 
-            <button
-                class="action-button register-button"
-                type="submit"
-            >
+<i id="moduleIcon"
+class="fa-solid fa-circle-info"></i>
 
-                <i class="fa-solid fa-user-plus"></i>
+<h2 id="moduleTitle">Function</h2>
 
-                Register Patient
+</div>
 
-            </button>
+<button
+class="back-btn"
+onclick="showDashboard()">
 
+<i class="fa-solid fa-arrow-left"></i>
 
-            <button
-                class="action-button reset-button"
-                type="reset"
-            >
+Back to Dashboard
 
-                <i class="fa-solid fa-rotate-left"></i>
+</button>
 
-                Reset / Clear
+</div>
 
-            </button>
+<div id="moduleContent"></div>
 
+</div>
 
-            <button
-                class="action-button cancel-button"
-                type="button"
-            >
-
-                Cancel
-
-            </button>
-
-
-        </div>
-
-
-    </form>
+</div>
 
 </main>
 
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div id="successModal" class="modal">
+
+<div class="modal-content success-modal">
+
+<div class="success-icon">
+
+<i class="fa-solid fa-check"></i>
+
+</div>
+
+<h2>
+Patient Registered Successfully!
+</h2>
+
+<p>
+The patient has been successfully registered
+in the hospital management system.
+</p>
+
+<div class="patient-id-box">
+
+<small>Generated Patient ID</small>
+
+<strong id="successPatientID">
+P-1001
+</strong>
+
+</div>
+
+<button
+class="success-ok"
+onclick="closeSuccess()">
+
+Continue
+
+</button>
+
+</div>
+</div>
+
+
+<!-- ================= ERROR MODAL ================= -->
+
+<div id="errorModal" class="modal">
+
+<div class="modal-content error-modal">
+
+<div class="error-icon">
+
+<i class="fa-solid fa-exclamation"></i>
+
+</div>
+
+<h2>Validation Error</h2>
+
+<p id="errorMessage">
+Please fill required fields.
+</p>
+
+<br>
+
+<button
+class="error-ok"
+onclick="closeError()">
+
+OK
+
+</button>
+
+</div>
+</div>
+
+
+<!-- ================= PATIENT DETAIL MODAL ================= -->
+
+<div id="patientModal" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Patient Details</h2>
+
+<button
+class="close-modal"
+onclick="closePatientModal()">
+
+&times;
+
+</button>
+
+</div>
+
+<div
+class="modal-body"
+id="patientModalBody">
+
+</div>
+
+</div>
+</div>
+
+
+<div id="toast" class="toast"></div>
 
 
 <script>
 
 /* =====================================================
-   LIVE DATE / TIME
+   STORAGE
+===================================================== */
+
+let patients =
+JSON.parse(localStorage.getItem("hospitalPatients")) || [];
+
+let doctors =
+JSON.parse(localStorage.getItem("hospitalDoctors")) || [];
+
+let appointments =
+JSON.parse(localStorage.getItem("hospitalAppointments")) || [];
+
+
+/* =====================================================
+   INDIAN STATES + UT
+===================================================== */
+
+const indianStates = [
+
+"Andhra Pradesh",
+"Arunachal Pradesh",
+"Assam",
+"Bihar",
+"Chhattisgarh",
+"Goa",
+"Gujarat",
+"Haryana",
+"Himachal Pradesh",
+"Jharkhand",
+"Karnataka",
+"Kerala",
+"Madhya Pradesh",
+"Maharashtra",
+"Manipur",
+"Meghalaya",
+"Mizoram",
+"Nagaland",
+"Odisha",
+"Punjab",
+"Rajasthan",
+"Sikkim",
+"Tamil Nadu",
+"Telangana",
+"Tripura",
+"Uttar Pradesh",
+"Uttarakhand",
+"West Bengal",
+
+"Andaman and Nicobar Islands",
+"Chandigarh",
+"Dadra and Nagar Haveli and Daman and Diu",
+"Delhi",
+"Jammu and Kashmir",
+"Ladakh",
+"Lakshadweep",
+"Puducherry"
+
+];
+
+
+/* =====================================================
+   COUNTRIES
+===================================================== */
+
+const countries = [
+
+"Afghanistan","Albania","Algeria","Andorra","Angola",
+"Argentina","Armenia","Australia","Austria","Azerbaijan",
+"Bahamas","Bahrain","Bangladesh","Barbados","Belarus",
+"Belgium","Belize","Benin","Bhutan","Bolivia",
+"Bosnia and Herzegovina","Botswana","Brazil","Brunei",
+"Bulgaria","Cambodia","Cameroon","Canada","Chile",
+"China","Colombia","Costa Rica","Croatia","Cuba",
+"Cyprus","Czech Republic","Denmark","Djibouti",
+"Dominica","Dominican Republic","Ecuador","Egypt",
+"El Salvador","Estonia","Ethiopia","Fiji","Finland",
+"France","Gabon","Gambia","Georgia","Germany",
+"Ghana","Greece","Grenada","Guatemala","Guyana",
+"Haiti","Honduras","Hungary","Iceland","India",
+"Indonesia","Iran","Iraq","Ireland","Israel","Italy",
+"Jamaica","Japan","Jordan","Kazakhstan","Kenya",
+"Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia",
+"Lebanon","Lesotho","Liberia","Libya","Liechtenstein",
+"Lithuania","Luxembourg","Madagascar","Malawi",
+"Malaysia","Maldives","Mali","Malta","Mauritania",
+"Mauritius","Mexico","Moldova","Monaco","Mongolia",
+"Montenegro","Morocco","Mozambique","Myanmar",
+"Namibia","Nauru","Nepal","Netherlands",
+"New Zealand","Nicaragua","Niger","Nigeria",
+"North Korea","North Macedonia","Norway","Oman",
+"Pakistan","Palau","Panama","Papua New Guinea",
+"Paraguay","Peru","Philippines","Poland","Portugal",
+"Qatar","Romania","Russia","Rwanda","Saudi Arabia",
+"Senegal","Serbia","Seychelles","Singapore",
+"Slovakia","Slovenia","Somalia","South Africa",
+"South Korea","South Sudan","Spain","Sri Lanka",
+"Sudan","Suriname","Sweden","Switzerland","Syria",
+"Taiwan","Tajikistan","Tanzania","Thailand",
+"Timor-Leste","Togo","Tonga","Trinidad and Tobago",
+"Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda",
+"Ukraine","United Arab Emirates","United Kingdom",
+"United States","Uruguay","Uzbekistan","Vanuatu",
+"Vatican City","Venezuela","Vietnam","Yemen",
+"Zambia","Zimbabwe"
+
+];
+
+
+/* =====================================================
+   LOAD DROPDOWNS
+===================================================== */
+
+function loadDropdowns(){
+
+    const state =
+        document.getElementById("state");
+
+    const country =
+        document.getElementById("country");
+
+
+    indianStates.forEach(item => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = item;
+        option.textContent = item;
+
+        state.appendChild(option);
+
+    });
+
+
+    countries.sort().forEach(item => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = item;
+        option.textContent = item;
+
+        country.appendChild(option);
+
+    });
+
+}
+
+loadDropdowns();
+
+
+/* =====================================================
+   DATE / TIME
 ===================================================== */
 
 function updateDateTime(){
 
     const now = new Date();
 
-
-    /* DATE */
-
     const months = [
-        "Jan","Feb","Mar","Apr",
-        "May","Jun","Jul","Aug",
-        "Sep","Oct","Nov","Dec"
+        "Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"
     ];
 
+    const days = [
+        "Sunday","Monday","Tuesday","Wednesday",
+        "Thursday","Friday","Saturday"
+    ];
 
     const shortDays = [
-        "Sun","Mon","Tue","Wed",
-        "Thu","Fri","Sat"
+        "Sun","Mon","Tue","Wed","Thu","Fri","Sat"
     ];
 
 
-    const fullDays = [
-        "Sunday","Monday","Tuesday",
-        "Wednesday","Thursday",
-        "Friday","Saturday"
-    ];
+    document.getElementById("currentDate")
+    .textContent =
+    `${shortDays[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
 
 
-    document.getElementById("currentDate").textContent =
-        `${shortDays[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+    document.getElementById("currentDay")
+    .textContent =
+    days[now.getDay()];
 
-
-    document.getElementById("currentDay").textContent =
-        fullDays[now.getDay()];
-
-
-
-    /* TIME */
 
     let hour = now.getHours();
 
@@ -1912,26 +2430,21 @@ function updateDateTime(){
     const second =
         String(now.getSeconds()).padStart(2,"0");
 
-
     const period =
         hour >= 12 ? "PM" : "AM";
 
-
-    hour = hour % 12;
-
-    hour = hour || 12;
+    hour = hour % 12 || 12;
 
 
-    document.getElementById("currentTime").textContent =
-        `${String(hour).padStart(2,"0")}:${minute}:${second} ${period}`;
+    document.getElementById("currentTime")
+    .textContent =
+    `${String(hour).padStart(2,"0")}:${minute}:${second} ${period}`;
 
 }
-
 
 updateDateTime();
 
 setInterval(updateDateTime,1000);
-
 
 
 /* =====================================================
@@ -1940,63 +2453,142 @@ setInterval(updateDateTime,1000);
 
 function setRegistrationDate(){
 
-    const today = new Date();
-
+    const now = new Date();
 
     const months = [
-        "Jan","Feb","Mar","Apr",
-        "May","Jun","Jul","Aug",
-        "Sep","Oct","Nov","Dec"
+        "Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"
     ];
 
-
-    document.getElementById("registrationDate").value =
-        `${String(today.getDate()).padStart(2,"0")} ${months[today.getMonth()]} ${today.getFullYear()}`;
+    document.getElementById("registrationDate")
+    .value =
+    `${String(now.getDate()).padStart(2,"0")} ${months[now.getMonth()]} ${now.getFullYear()}`;
 
 }
 
 setRegistrationDate();
 
 
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function hidePages(){
+
+    document.getElementById("homePage")
+    .classList.add("hidden");
+
+    document.getElementById("dashboardPage")
+    .classList.add("hidden");
+
+    document.getElementById("registrationPage")
+    .classList.add("hidden");
+
+    document.getElementById("modulePage")
+    .classList.add("hidden");
+
+}
+
+
+function removeActive(){
+
+    document.querySelectorAll(".nav-button")
+    .forEach(btn =>
+        btn.classList.remove("active")
+    );
+
+}
+
+
+function showHome(){
+
+    hidePages();
+    removeActive();
+
+    document.getElementById("homePage")
+    .classList.remove("hidden");
+
+    document.getElementById("homeNav")
+    .classList.add("active");
+
+}
+
+
+function showDashboard(){
+
+    hidePages();
+    removeActive();
+
+    document.getElementById("dashboardPage")
+    .classList.remove("hidden");
+
+    document.getElementById("dashboardNav")
+    .classList.add("active");
+
+    updateDashboard();
+
+}
+
+
+function showRegistration(){
+
+    hidePages();
+
+    removeActive();
+
+    document.getElementById("registrationPage")
+    .classList.remove("hidden");
+
+    setRegistrationDate();
+
+}
+
 
 /* =====================================================
    AGE CALCULATION
 ===================================================== */
 
-document.getElementById("dob").addEventListener(
-"change",
-function(){
+document.getElementById("dob")
+.addEventListener("change",function(){
 
-    const birthDate = new Date(this.value);
+    if(!this.value){
 
+        document.getElementById("age").value = "";
+
+        return;
+
+    }
+
+
+    const birth = new Date(this.value);
     const today = new Date();
 
 
-    if(birthDate > today){
+    if(birth > today){
 
-        document.getElementById("age").value =
-            "Invalid DOB";
+        document.getElementById("age")
+        .value = "Invalid DOB";
 
         return;
+
     }
 
 
     let age =
         today.getFullYear() -
-        birthDate.getFullYear();
+        birth.getFullYear();
 
 
     const month =
         today.getMonth() -
-        birthDate.getMonth();
+        birth.getMonth();
 
 
     if(
         month < 0 ||
         (
             month === 0 &&
-            today.getDate() <
-            birthDate.getDate()
+            today.getDate() < birth.getDate()
         )
     ){
 
@@ -2005,29 +2597,2055 @@ function(){
     }
 
 
-    document.getElementById("age").value =
-        age + " years";
+    document.getElementById("age")
+    .value = age + " years";
 
 });
-
 
 
 /* =====================================================
-   SUBMIT
+   MODALS
+===================================================== */
+
+function showError(message){
+
+    document.getElementById("errorMessage")
+    .textContent = message;
+
+    document.getElementById("errorModal")
+    .style.display = "flex";
+
+}
+
+
+function closeError(){
+
+    document.getElementById("errorModal")
+    .style.display = "none";
+
+}
+
+
+function showSuccess(id){
+
+    document.getElementById("successPatientID")
+    .textContent = id;
+
+    document.getElementById("successModal")
+    .style.display = "flex";
+
+}
+
+
+function closeSuccess(){
+
+    document.getElementById("successModal")
+    .style.display = "none";
+
+    displayPatients();
+
+}
+
+
+function closePatientModal(){
+
+    document.getElementById("patientModal")
+    .style.display = "none";
+
+}
+
+
+/* =====================================================
+   PATIENT ID
+===================================================== */
+
+function generatePatientID(){
+
+    let number = 1001;
+
+    while(
+        patients.some(
+            p => p.id === "P-" + number
+        )
+    ){
+
+        number++;
+
+    }
+
+    return "P-" + number;
+
+}
+
+
+/* =====================================================
+   VALIDATION
+===================================================== */
+
+function validateRegistration(){
+
+    const name =
+        document.getElementById("fullName")
+        .value.trim();
+
+    const dob =
+        document.getElementById("dob").value;
+
+    const gender =
+        document.querySelector(
+            'input[name="gender"]:checked'
+        );
+
+    const mobile =
+        document.getElementById("mobile")
+        .value.trim();
+
+    const alternate =
+        document.getElementById("alternatePhone")
+        .value.trim();
+
+    const email =
+        document.getElementById("email")
+        .value.trim();
+
+    const house =
+        document.getElementById("house")
+        .value.trim();
+
+    const street =
+        document.getElementById("street")
+        .value.trim();
+
+    const city =
+        document.getElementById("city")
+        .value.trim();
+
+    const state =
+        document.getElementById("state")
+        .value;
+
+    const country =
+        document.getElementById("country")
+        .value;
+
+    const pin =
+        document.getElementById("pin")
+        .value.trim();
+
+    const emergencyName =
+        document.getElementById("emergencyName")
+        .value.trim();
+
+    const relationship =
+        document.getElementById("relationship")
+        .value;
+
+    const emergencyPhone =
+        document.getElementById("emergencyPhone")
+        .value.trim();
+
+    const idType =
+        document.getElementById("idType")
+        .value;
+
+    const idNumber =
+        document.getElementById("idNumber")
+        .value.trim();
+
+
+    /* TC 1 */
+
+    if(name === ""){
+
+        showError("Name required");
+        return false;
+
+    }
+
+
+    /* TC 2 */
+
+    if(!/^[A-Za-z ]+$/.test(name)){
+
+        showError("Invalid name");
+        return false;
+
+    }
+
+
+    /* TC 3 */
+
+    if(dob === ""){
+
+        showError("DOB required");
+        return false;
+
+    }
+
+
+    /* TC 4 */
+
+    if(new Date(dob) > new Date()){
+
+        showError("Invalid DOB");
+        return false;
+
+    }
+
+
+    /* TC 5 */
+
+    if(!gender){
+
+        showError("Gender required");
+        return false;
+
+    }
+
+
+    /* TC 6 */
+
+    if(mobile === ""){
+
+        showError("Mobile required");
+        return false;
+
+    }
+
+
+    /* TC 7 */
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+
+        showError("Invalid mobile");
+        return false;
+
+    }
+
+
+    /* Alternate */
+
+    if(
+        alternate !== "" &&
+        !/^[0-9]{10}$/.test(alternate)
+    ){
+
+        showError("Invalid alternate phone number");
+        return false;
+
+    }
+
+
+    /* TC 8 */
+
+    if(
+        email !== "" &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    ){
+
+        showError("Invalid email");
+        return false;
+
+    }
+
+
+    /* TC 9 */
+
+    if(house === ""){
+
+        showError("House No. required");
+        return false;
+
+    }
+
+
+    /* TC 10 */
+
+    if(street === ""){
+
+        showError("Street required");
+        return false;
+
+    }
+
+
+    /* TC 11 */
+
+    if(city === ""){
+
+        showError("City required");
+        return false;
+
+    }
+
+
+    /* TC 12 */
+
+    if(state === ""){
+
+        showError("State required");
+        return false;
+
+    }
+
+
+    /* COUNTRY */
+
+    if(country === ""){
+
+        showError("Country required");
+        return false;
+
+    }
+
+
+    /* TC 13 */
+
+    if(pin === ""){
+
+        showError("PIN required");
+        return false;
+
+    }
+
+
+    if(!/^[0-9]{6}$/.test(pin)){
+
+        showError("Invalid PIN");
+        return false;
+
+    }
+
+
+    /* TC 14 */
+
+    if(emergencyName === ""){
+
+        showError("Emergency name required");
+        return false;
+
+    }
+
+
+    if(!/^[A-Za-z ]+$/.test(emergencyName)){
+
+        showError("Invalid emergency name");
+        return false;
+
+    }
+
+
+    /* TC 16 */
+
+    if(relationship === ""){
+
+        showError("Relationship required");
+        return false;
+
+    }
+
+
+    /* TC 15 */
+
+    if(emergencyPhone === ""){
+
+        showError("Emergency number required");
+        return false;
+
+    }
+
+
+    if(!/^[0-9]{10}$/.test(emergencyPhone)){
+
+        showError("Invalid emergency number");
+        return false;
+
+    }
+
+
+    /* TC 17 */
+
+    if(idType === ""){
+
+        showError("ID proof required");
+        return false;
+
+    }
+
+
+    /* TC 18 */
+
+    if(idNumber === ""){
+
+        showError("ID number required");
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* =====================================================
+   REGISTER PATIENT
 ===================================================== */
 
 document.getElementById("registrationForm")
-.addEventListener(
-"submit",
-function(event){
+.addEventListener("submit",function(e){
 
-    event.preventDefault();
+    e.preventDefault();
 
-    alert(
-        "Patient Registered Successfully!"
+
+    if(!validateRegistration()){
+
+        return;
+
+    }
+
+
+    const gender =
+        document.querySelector(
+            'input[name="gender"]:checked'
+        ).value;
+
+
+    const patient = {
+
+        id:generatePatientID(),
+
+        name:
+        document.getElementById("fullName")
+        .value.trim(),
+
+        dob:
+        document.getElementById("dob").value,
+
+        age:
+        document.getElementById("age").value,
+
+        gender:gender,
+
+        blood:
+        document.getElementById("bloodGroup").value,
+
+        marital:
+        document.getElementById("maritalStatus").value,
+
+        mobile:
+        document.getElementById("mobile")
+        .value.trim(),
+
+        alternate:
+        document.getElementById("alternatePhone")
+        .value.trim(),
+
+        email:
+        document.getElementById("email")
+        .value.trim(),
+
+        house:
+        document.getElementById("house")
+        .value.trim(),
+
+        street:
+        document.getElementById("street")
+        .value.trim(),
+
+        city:
+        document.getElementById("city")
+        .value.trim(),
+
+        state:
+        document.getElementById("state").value,
+
+        country:
+        document.getElementById("country").value,
+
+        pin:
+        document.getElementById("pin")
+        .value.trim(),
+
+        emergencyName:
+        document.getElementById("emergencyName")
+        .value.trim(),
+
+        relationship:
+        document.getElementById("relationship")
+        .value,
+
+        emergencyPhone:
+        document.getElementById("emergencyPhone")
+        .value.trim(),
+
+        idType:
+        document.getElementById("idType")
+        .value,
+
+        idNumber:
+        document.getElementById("idNumber")
+        .value.trim(),
+
+        registrationDate:
+        document.getElementById("registrationDate")
+        .value
+
+    };
+
+
+    patients.push(patient);
+
+
+    localStorage.setItem(
+        "hospitalPatients",
+        JSON.stringify(patients)
     );
 
+
+    displayPatients();
+
+    updateDashboard();
+
+
+    this.reset();
+
+    document.getElementById("age").value = "";
+
+    setRegistrationDate();
+
+
+    showSuccess(patient.id);
+
 });
+
+
+/* =====================================================
+   DISPLAY PATIENTS
+===================================================== */
+
+function displayPatients(){
+
+    const tbody =
+        document.getElementById(
+            "patientTableBody"
+        );
+
+    tbody.innerHTML = "";
+
+
+    document.getElementById("patientCount")
+    .textContent = patients.length;
+
+
+    const empty =
+        document.getElementById("emptyMessage");
+
+
+    if(patients.length === 0){
+
+        empty.style.display = "block";
+        return;
+
+    }
+
+
+    empty.style.display = "none";
+
+
+    patients.forEach(patient => {
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+        <td class="patient-id">
+            ${escapeHTML(patient.id)}
+        </td>
+
+        <td>
+            ${escapeHTML(patient.name)}
+        </td>
+
+        <td>
+            ${formatDOB(patient.dob)}
+        </td>
+
+        <td>
+            ${escapeHTML(patient.age)}
+        </td>
+
+        <td>
+            <span class="gender-badge">
+                ${escapeHTML(patient.gender)}
+            </span>
+        </td>
+
+        <td>
+            ${escapeHTML(patient.blood)}
+        </td>
+
+        <td>
+            ${escapeHTML(patient.mobile)}
+        </td>
+
+        <td>
+            ${escapeHTML(patient.country)}
+        </td>
+
+        <td>
+            ${escapeHTML(patient.state)}
+        </td>
+
+        <td>
+
+            <button
+            class="view-btn"
+            onclick="viewPatient('${patient.id}')">
+
+            <i class="fa-solid fa-eye"></i>
+
+            </button>
+
+            <button
+            class="delete-btn"
+            onclick="deletePatient('${patient.id}')">
+
+            <i class="fa-solid fa-trash"></i>
+
+            </button>
+
+        </td>
+
+        `;
+
+
+        tbody.appendChild(row);
+
+    });
+
+}
+
+
+/* =====================================================
+   FORMAT DOB
+===================================================== */
+
+function formatDOB(date){
+
+    if(!date) return "";
+
+    const p = date.split("-");
+
+    return `${p[2]}-${p[1]}-${p[0]}`;
+
+}
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+function escapeHTML(value){
+
+    if(value === undefined || value === null)
+        return "";
+
+    return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   VIEW PATIENT
+===================================================== */
+
+function viewPatient(id){
+
+    const p =
+        patients.find(
+            patient => patient.id === id
+        );
+
+
+    if(!p) return;
+
+
+    document.getElementById(
+        "patientModalBody"
+    ).innerHTML = `
+
+    <div class="detail-grid">
+
+        <div class="detail-item">
+            <strong>Patient ID</strong>
+            <span>${escapeHTML(p.id)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Full Name</strong>
+            <span>${escapeHTML(p.name)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Date of Birth</strong>
+            <span>${formatDOB(p.dob)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Age</strong>
+            <span>${escapeHTML(p.age)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Gender</strong>
+            <span>${escapeHTML(p.gender)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Blood Group</strong>
+            <span>${escapeHTML(p.blood)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Marital Status</strong>
+            <span>${escapeHTML(p.marital || "Not provided")}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Mobile</strong>
+            <span>${escapeHTML(p.mobile)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Email</strong>
+            <span>${escapeHTML(p.email || "Not provided")}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>House / Flat</strong>
+            <span>${escapeHTML(p.house)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Street / Locality</strong>
+            <span>${escapeHTML(p.street)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>City</strong>
+            <span>${escapeHTML(p.city)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>State / UT</strong>
+            <span>${escapeHTML(p.state)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Country</strong>
+            <span>${escapeHTML(p.country)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>PIN Code</strong>
+            <span>${escapeHTML(p.pin)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Emergency Name</strong>
+            <span>${escapeHTML(p.emergencyName)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Relationship</strong>
+            <span>${escapeHTML(p.relationship)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Emergency Number</strong>
+            <span>${escapeHTML(p.emergencyPhone)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>ID Proof Type</strong>
+            <span>${escapeHTML(p.idType)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>ID Proof Number</strong>
+            <span>${escapeHTML(p.idNumber)}</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Registration Date</strong>
+            <span>${escapeHTML(p.registrationDate)}</span>
+        </div>
+
+    </div>
+
+    `;
+
+
+    document.getElementById(
+        "patientModal"
+    ).style.display = "flex";
+
+}
+
+
+/* =====================================================
+   DELETE PATIENT
+===================================================== */
+
+function deletePatient(id){
+
+    const p =
+        patients.find(
+            patient => patient.id === id
+        );
+
+
+    if(!p) return;
+
+
+    if(!confirm(
+        "Delete patient " + p.name + "?"
+    )) return;
+
+
+    patients =
+        patients.filter(
+            patient => patient.id !== id
+        );
+
+
+    localStorage.setItem(
+        "hospitalPatients",
+        JSON.stringify(patients)
+    );
+
+
+    displayPatients();
+
+    updateDashboard();
+
+    showToast(
+        "Patient deleted successfully."
+    );
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+function updateDashboard(){
+
+    document.getElementById(
+        "totalPatients"
+    ).textContent = patients.length;
+
+
+    document.getElementById(
+        "newPatients"
+    ).textContent = patients.length;
+
+
+    document.getElementById(
+        "totalDoctors"
+    ).textContent = doctors.length;
+
+
+    document.getElementById(
+        "totalAppointments"
+    ).textContent = appointments.length;
+
+
+    const tbody =
+        document.getElementById(
+            "dashboardPatientBody"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    [...patients]
+    .reverse()
+    .slice(0,5)
+    .forEach(p => {
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+        <td class="patient-id">
+            ${escapeHTML(p.id)}
+        </td>
+
+        <td>${escapeHTML(p.name)}</td>
+
+        <td>${escapeHTML(p.gender)}</td>
+
+        <td>${escapeHTML(p.age)}</td>
+
+        <td>${escapeHTML(p.mobile)}</td>
+
+        <td>${escapeHTML(p.registrationDate)}</td>
+
+        `;
+
+
+        tbody.appendChild(row);
+
+    });
+
+}
+
+
+/* =====================================================
+   DASHBOARD FUNCTIONS
+===================================================== */
+
+function openFunction(type){
+
+    hidePages();
+
+
+    document.getElementById(
+        "modulePage"
+    ).classList.remove("hidden");
+
+
+    const title =
+        document.getElementById("moduleTitle");
+
+    const icon =
+        document.getElementById("moduleIcon");
+
+    const content =
+        document.getElementById("moduleContent");
+
+
+    /* LOGIN */
+
+    if(type === "login"){
+
+        title.textContent = "Login";
+
+        icon.className =
+            "fa-solid fa-right-to-bracket";
+
+
+        content.innerHTML = `
+
+        <div class="module-grid">
+
+            <div class="module-box">
+
+                <h3>Current Login</h3>
+
+                <p>
+
+                Staff Name:
+                <strong>Registration Staff</strong>
+
+                <br>
+
+                Staff ID:
+                <strong>RS-001</strong>
+
+                <br>
+
+                Role:
+                <strong>Registration Staff</strong>
+
+                <br>
+
+                Status:
+                <strong style="color:#15945e">
+                Logged In
+                </strong>
+
+                </p>
+
+            </div>
+
+
+            <div class="module-box">
+
+                <h3>Authentication</h3>
+
+                <p>
+                Current staff session is active.
+                Logout is available from the header.
+                </p>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* UPDATE */
+
+    if(type === "update"){
+
+        title.textContent =
+            "Update Patient Details";
+
+        icon.className =
+            "fa-solid fa-user-pen";
+
+
+        content.innerHTML = `
+
+        <div class="module-box">
+
+            <h3>Search Patient</h3>
+
+            <div class="module-form">
+
+                <div class="full">
+
+                    <input
+                    id="updateID"
+                    class="module-input"
+                    placeholder="Patient ID e.g. P-1001">
+
+                </div>
+
+                <div>
+
+                    <input
+                    id="updateName"
+                    class="module-input"
+                    placeholder="New name">
+
+                </div>
+
+                <div>
+
+                    <input
+                    id="updateMobile"
+                    class="module-input"
+                    placeholder="New mobile">
+
+                </div>
+
+            </div>
+
+            <button
+            class="module-action"
+            onclick="updatePatient()">
+
+            <i class="fa-solid fa-save"></i>
+
+            Update Patient
+
+            </button>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* UNIQUE ID */
+
+    if(type === "unique"){
+
+        title.textContent =
+            "Generate Unique Patient ID";
+
+        icon.className =
+            "fa-solid fa-id-card";
+
+
+        content.innerHTML = `
+
+        <div class="module-box">
+
+            <h3>Next Available Patient ID</h3>
+
+            <p style="
+            font-size:32px;
+            color:#147fd4;
+            font-weight:800;
+            margin:20px 0;
+            ">
+
+            ${generatePatientID()}
+
+            </p>
+
+            <p>
+            This ID is automatically assigned
+            during new patient registration.
+            </p>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* DOCTOR */
+
+    if(type === "doctor"){
+
+        title.textContent =
+            "Assign / Register Doctor";
+
+        icon.className =
+            "fa-solid fa-user-doctor";
+
+
+        content.innerHTML = `
+
+        <div class="module-box">
+
+            <h3>Register Doctor</h3>
+
+            <div class="module-form">
+
+                <input
+                id="doctorName"
+                class="module-input"
+                placeholder="Doctor Name">
+
+                <input
+                id="doctorDepartment"
+                class="module-input"
+                placeholder="Department">
+
+            </div>
+
+            <button
+            class="module-action"
+            onclick="registerDoctor()">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            Register Doctor
+
+            </button>
+
+        </div>
+
+
+        <div class="module-box"
+        style="margin-top:15px;">
+
+            <h3>Registered Doctors</h3>
+
+            <div id="doctorList"></div>
+
+        </div>
+
+        `;
+
+        displayDoctors();
+
+    }
+
+
+    /* AVAILABILITY */
+
+    if(type === "availability"){
+
+        title.textContent =
+            "Check Doctor Availability";
+
+        icon.className =
+            "fa-solid fa-calendar-days";
+
+
+        content.innerHTML = `
+
+        <div class="module-box">
+
+            <h3>Doctor Availability</h3>
+
+            <select
+            id="availabilityDoctor"
+            class="module-input">
+
+            <option value="">
+            Select Doctor
+            </option>
+
+            </select>
+
+            <br>
+
+            <button
+            class="module-action"
+            onclick="checkAvailability()">
+
+            Check Availability
+
+            </button>
+
+            <div
+            id="availabilityResult"
+            style="margin-top:15px;">
+
+            </div>
+
+        </div>
+
+        `;
+
+
+        const select =
+            document.getElementById(
+                "availabilityDoctor"
+            );
+
+
+        doctors.forEach(d => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = d.id;
+
+            option.textContent =
+                `${d.name} - ${d.department}`;
+
+            select.appendChild(option);
+
+        });
+
+    }
+
+
+    /* HISTORY */
+
+    if(type === "history"){
+
+        title.textContent =
+            "Patient Visit History";
+
+        icon.className =
+            "fa-solid fa-clock-rotate-left";
+
+
+        content.innerHTML = `
+
+        <div class="module-box">
+
+            <h3>Search Patient History</h3>
+
+            <input
+            id="historyID"
+            class="module-input"
+            placeholder="Patient ID e.g. P-1001">
+
+            <br>
+
+            <button
+            class="module-action"
+            onclick="showHistory()">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            View History
+
+            </button>
+
+            <div
+            id="historyResult"
+            style="margin-top:15px;">
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    /* APPOINTMENT */
+
+    if(type === "appointment"){
+
+        title.textContent =
+            "Create / Cancel Appointment";
+
+        icon.className =
+            "fa-solid fa-calendar-plus";
+
+
+        content.innerHTML = `
+
+        <div class="module-box">
+
+            <h3>Create New Appointment</h3>
+
+            <div class="module-form">
+
+                <input
+                id="appointmentPatient"
+                class="module-input"
+                placeholder="Patient ID">
+
+                <input
+                id="appointmentDoctor"
+                class="module-input"
+                placeholder="Doctor Name">
+
+                <input
+                id="appointmentDate"
+                type="date"
+                class="module-input">
+
+                <input
+                id="appointmentTime"
+                type="time"
+                class="module-input">
+
+            </div>
+
+            <button
+            class="module-action"
+            onclick="createAppointment()">
+
+            <i class="fa-solid fa-calendar-plus"></i>
+
+            Create Appointment
+
+            </button>
+
+        </div>
+
+
+        <div
+        class="module-box"
+        style="margin-top:15px;">
+
+            <h3>Appointments</h3>
+
+            <div id="appointmentList"></div>
+
+        </div>
+
+        `;
+
+        displayAppointments();
+
+    }
+
+}
+
+
+/* =====================================================
+   UPDATE PATIENT
+===================================================== */
+
+function updatePatient(){
+
+    const id =
+        document.getElementById("updateID")
+        .value.trim();
+
+    const name =
+        document.getElementById("updateName")
+        .value.trim();
+
+    const mobile =
+        document.getElementById("updateMobile")
+        .value.trim();
+
+
+    const p =
+        patients.find(
+            patient => patient.id === id
+        );
+
+
+    if(!p){
+
+        showError("Patient not found.");
+
+        return;
+
+    }
+
+
+    if(
+        name !== "" &&
+        !/^[A-Za-z ]+$/.test(name)
+    ){
+
+        showError("Invalid name");
+
+        return;
+
+    }
+
+
+    if(
+        mobile !== "" &&
+        !/^[0-9]{10}$/.test(mobile)
+    ){
+
+        showError("Invalid mobile");
+
+        return;
+
+    }
+
+
+    if(name !== "")
+        p.name = name;
+
+
+    if(mobile !== "")
+        p.mobile = mobile;
+
+
+    localStorage.setItem(
+        "hospitalPatients",
+        JSON.stringify(patients)
+    );
+
+
+    displayPatients();
+
+    updateDashboard();
+
+    showToast(
+        "Patient details updated successfully."
+    );
+
+}
+
+
+/* =====================================================
+   REGISTER DOCTOR
+===================================================== */
+
+function registerDoctor(){
+
+    const name =
+        document.getElementById("doctorName")
+        .value.trim();
+
+    const department =
+        document.getElementById("doctorDepartment")
+        .value.trim();
+
+
+    if(name === ""){
+
+        showError("Doctor name required.");
+
+        return;
+
+    }
+
+
+    if(department === ""){
+
+        showError("Department required.");
+
+        return;
+
+    }
+
+
+    const doctor = {
+
+        id:"D-" + (doctors.length + 101),
+
+        name:name,
+
+        department:department,
+
+        available:true
+
+    };
+
+
+    doctors.push(doctor);
+
+
+    localStorage.setItem(
+        "hospitalDoctors",
+        JSON.stringify(doctors)
+    );
+
+
+    displayDoctors();
+
+    updateDashboard();
+
+    showToast(
+        "Doctor registered successfully."
+    );
+
+}
+
+
+/* =====================================================
+   DISPLAY DOCTORS
+===================================================== */
+
+function displayDoctors(){
+
+    const list =
+        document.getElementById("doctorList");
+
+
+    if(!list) return;
+
+
+    if(doctors.length === 0){
+
+        list.innerHTML =
+        `<p style="color:#7890a5">
+        No doctors registered yet.
+        </p>`;
+
+        return;
+
+    }
+
+
+    list.innerHTML =
+        doctors.map(d => `
+
+        <div style="
+        padding:10px;
+        border-bottom:1px solid #dce8ef;">
+
+        <strong>
+        ${escapeHTML(d.id)}
+        </strong>
+
+        -
+        ${escapeHTML(d.name)}
+
+        <br>
+
+        <small>
+        Department:
+        ${escapeHTML(d.department)}
+        </small>
+
+        </div>
+
+        `).join("");
+
+}
+
+
+/* =====================================================
+   DOCTOR AVAILABILITY
+===================================================== */
+
+function checkAvailability(){
+
+    const id =
+        document.getElementById(
+            "availabilityDoctor"
+        ).value;
+
+
+    if(!id){
+
+        showError("Please select a doctor.");
+
+        return;
+
+    }
+
+
+    const doctor =
+        doctors.find(d => d.id === id);
+
+
+    document.getElementById(
+        "availabilityResult"
+    ).innerHTML = `
+
+    <div style="
+    background:#dff5e9;
+    border:1px solid #bfe5d0;
+    padding:12px;
+    border-radius:7px;
+    color:#17704d;">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <strong>
+    ${escapeHTML(doctor.name)}
+    </strong>
+
+    is available.
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   PATIENT HISTORY
+===================================================== */
+
+function showHistory(){
+
+    const id =
+        document.getElementById(
+            "historyID"
+        ).value.trim();
+
+
+    const patient =
+        patients.find(p => p.id === id);
+
+
+    if(!patient){
+
+        showError("Patient not found.");
+
+        return;
+
+    }
+
+
+    const history =
+        appointments.filter(
+            a => a.patientID === id
+        );
+
+
+    document.getElementById(
+        "historyResult"
+    ).innerHTML = `
+
+    <div class="module-box">
+
+        <h3>
+        ${escapeHTML(patient.name)}
+        </h3>
+
+        <p>
+        Patient ID:
+        <strong>${escapeHTML(patient.id)}</strong>
+
+        <br><br>
+
+        Registration Date:
+        ${escapeHTML(patient.registrationDate)}
+
+        <br><br>
+
+        Total Appointments:
+        <strong>${history.length}</strong>
+
+        </p>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   CREATE APPOINTMENT
+===================================================== */
+
+function createAppointment(){
+
+    const patientID =
+        document.getElementById(
+            "appointmentPatient"
+        ).value.trim();
+
+    const doctor =
+        document.getElementById(
+            "appointmentDoctor"
+        ).value.trim();
+
+    const date =
+        document.getElementById(
+            "appointmentDate"
+        ).value;
+
+    const time =
+        document.getElementById(
+            "appointmentTime"
+        ).value;
+
+
+    if(patientID === ""){
+
+        showError("Patient ID required.");
+
+        return;
+
+    }
+
+
+    if(
+        !patients.some(
+            p => p.id === patientID
+        )
+    ){
+
+        showError("Patient not found.");
+
+        return;
+
+    }
+
+
+    if(doctor === ""){
+
+        showError("Doctor name required.");
+
+        return;
+
+    }
+
+
+    if(date === ""){
+
+        showError("Appointment date required.");
+
+        return;
+
+    }
+
+
+    if(time === ""){
+
+        showError("Appointment time required.");
+
+        return;
+
+    }
+
+
+    appointments.push({
+
+        id:
+        "A-" + (appointments.length + 1001),
+
+        patientID:patientID,
+
+        doctor:doctor,
+
+        date:date,
+
+        time:time,
+
+        status:"Scheduled"
+
+    });
+
+
+    localStorage.setItem(
+        "hospitalAppointments",
+        JSON.stringify(appointments)
+    );
+
+
+    displayAppointments();
+
+    updateDashboard();
+
+    showToast(
+        "Appointment created successfully."
+    );
+
+}
+
+
+/* =====================================================
+   DISPLAY APPOINTMENTS
+===================================================== */
+
+function displayAppointments(){
+
+    const list =
+        document.getElementById(
+            "appointmentList"
+        );
+
+
+    if(!list) return;
+
+
+    if(appointments.length === 0){
+
+        list.innerHTML =
+        `<p style="color:#7890a5">
+        No appointments available.
+        </p>`;
+
+        return;
+
+    }
+
+
+    list.innerHTML =
+        appointments.map(a => `
+
+        <div style="
+        padding:12px;
+        border-bottom:1px solid #dce8ef;">
+
+        <strong>${escapeHTML(a.id)}</strong>
+
+        <br>
+
+        Patient:
+        ${escapeHTML(a.patientID)}
+
+        <br>
+
+        Doctor:
+        ${escapeHTML(a.doctor)}
+
+        <br>
+
+        Date:
+        ${escapeHTML(a.date)}
+
+        &nbsp; Time:
+        ${escapeHTML(a.time)}
+
+        <br>
+
+        Status:
+        <strong>${escapeHTML(a.status)}</strong>
+
+        <br><br>
+
+        ${
+            a.status === "Scheduled"
+
+            ?
+
+            `<button
+            onclick="cancelAppointment('${a.id}')"
+            style="
+            border:none;
+            background:#ffe9ed;
+            color:#d8324b;
+            padding:7px 11px;
+            border-radius:5px;">
+
+            Cancel Appointment
+
+            </button>`
+
+            :
+
+            `<span style="color:#d8324b">
+            Appointment Cancelled
+            </span>`
+        }
+
+        </div>
+
+        `).join("");
+
+}
+
+
+/* =====================================================
+   CANCEL APPOINTMENT
+===================================================== */
+
+function cancelAppointment(id){
+
+    const appointment =
+        appointments.find(
+            a => a.id === id
+        );
+
+
+    if(!appointment) return;
+
+
+    if(
+        !confirm(
+            "Cancel this appointment?"
+        )
+    ) return;
+
+
+    appointment.status =
+        "Cancelled";
+
+
+    localStorage.setItem(
+        "hospitalAppointments",
+        JSON.stringify(appointments)
+    );
+
+
+    displayAppointments();
+
+    updateDashboard();
+
+    showToast(
+        "Appointment cancelled successfully."
+    );
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+
+    toast.textContent = message;
+
+    toast.style.display = "block";
+
+
+    setTimeout(() => {
+
+        toast.style.display = "none";
+
+    },2500);
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    if(
+        confirm(
+            "Are you sure you want to logout?"
+        )
+    ){
+
+        showHome();
+
+        showToast(
+            "Logout successful."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+document.getElementById(
+    "registrationForm"
+).addEventListener(
+    "reset",
+    function(){
+
+        setTimeout(() => {
+
+            document.getElementById(
+                "age"
+            ).value = "";
+
+            setRegistrationDate();
+
+        },0);
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE MODALS
+===================================================== */
+
+window.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target ===
+            document.getElementById(
+                "patientModal"
+            )
+        ){
+
+            closePatientModal();
+
+        }
+
+        if(
+            e.target ===
+            document.getElementById(
+                "successModal"
+            )
+        ){
+
+            closeSuccess();
+
+        }
+
+        if(
+            e.target ===
+            document.getElementById(
+                "errorModal"
+            )
+        ){
+
+            closeError();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+displayPatients();
+
+updateDashboard();
+
+showHome();
 
 </script>
 
